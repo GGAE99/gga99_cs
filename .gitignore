@@ -1,0 +1,74 @@
+# ============================================================
+# AI / Agent tools (any nesting level)
+# ============================================================
+
+# Claude Code / OMC
+.omc/
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.mcp.json
+.mcp.local.json
+
+# Cursor
+.cursor/
+.cursorrules
+.cursorignore
+
+# Aider
+.aider*
+
+# Continue.dev
+.continue/
+
+# Codeium / Windsurf
+.codeium/
+.windsurf/
+.windsurfrules
+
+# Cline / Roo
+.cline/
+.clinerules
+cline_mcp_settings.json
+.roo/
+.roomodes
+
+# Other AI assistants
+.copilot/
+.github/copilot-*
+.codellm/
+.codecompanion/
+.cody/
+.tabnine/
+.zed/
+
+# Anthropic / OpenAI keys (extra safety)
+.env
+.env.*
+!.env.example
+*.key
+secrets.json
+
+# ============================================================
+# Build artifacts
+# ============================================================
+_site/
+
+# ============================================================
+# Python (for local mkdocs)
+# ============================================================
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ============================================================
+# OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

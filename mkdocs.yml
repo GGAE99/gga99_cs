@@ -1,0 +1,123 @@
+site_name: CS Knowledge Base
+site_description: 컴퓨터 과학 기초부터 실무까지, 계층적으로 정리한 학습 노트
+site_author: GGAE99
+site_url: https://GGAE99.github.io/gga99_cs/
+
+repo_url: https://github.com/GGAE99/gga99_cs
+repo_name: GGAE99/gga99_cs
+edit_uri: edit/main/
+
+docs_dir: .
+site_dir: _site
+
+exclude_docs: |
+  /.git/
+  /.github/
+  /.omc/
+  /_site/
+  /mkdocs.yml
+  /requirements.txt
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: 이 섹션 링크 복사
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - same-dir
+  - search:
+      lang:
+        - ko
+        - en
+
+nav:
+  - 홈: README.md
+  - Layer 1. CS 기초:
+    - 개요: 01-computer-science/README.md
+  - Layer 2. Language:
+    - 개요: 02-language/README.md
+  - Layer 3. 백엔드 & 인프라:
+    - 백엔드: 03-backend/README.md
+    - 시스템 디자인: 04-system-design/README.md
+    - DevOps & 인프라: 05-devops-infra/README.md
+    - 보안: 06-security/README.md
+  - Layer 4. 클라이언트:
+    - 웹 & 브라우저: 07-web/README.md
+    - 프론트엔드: 08-frontend/README.md
+    - 모바일: 09-mobile/README.md
+  - Layer 5. AI / 데이터:
+    - 개요: 10-ai-data/README.md
+  - 면접 질문:
+    - 개요: 99-interview-questions/README.md
+    - 카테고리별:
+      - 목록: 99-interview-questions/by-category/README.md
+      - 자료구조: 99-interview-questions/by-category/data-structure.md
+      - 운영체제: 99-interview-questions/by-category/operating-system.md
+      - 네트워크: 99-interview-questions/by-category/network.md
+      - 데이터베이스: 99-interview-questions/by-category/database.md
+      - 컴퓨터 구조: 99-interview-questions/by-category/computer-architecture.md
+      - SW 공학: 99-interview-questions/by-category/software-engineering.md
+      - JavaScript: 99-interview-questions/by-category/language-js.md
+      - TypeScript: 99-interview-questions/by-category/language-ts.md
+      - 백엔드: 99-interview-questions/by-category/backend.md
+      - DevOps: 99-interview-questions/by-category/devops.md
+      - 웹: 99-interview-questions/by-category/web.md
+      - 프론트엔드: 99-interview-questions/by-category/frontend.md
+      - 모바일: 99-interview-questions/by-category/mobile.md
+      - AI / 데이터: 99-interview-questions/by-category/ai-data.md
+  - 자료실: resources/README.md
