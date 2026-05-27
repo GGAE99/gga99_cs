@@ -35,10 +35,6 @@ security.md           web.md                frontend.md   mobile.md
 ```markdown
 ## Q. 클로저(Closure)란 무엇인가?
 
-**난이도**:  신입 /  주니어 /  시니어
-**카테고리**: language-js
-**관련 문서**: [클로저 상세](../../02-language/javascript/closure.md)
-
 ### 핵심 답안 (30초)
 > 함수가 선언된 렉시컬 환경(스코프)을 기억하여,
 > 외부 함수의 실행이 끝난 뒤에도 그 변수에 접근할 수 있는 함수.
@@ -53,26 +49,10 @@ security.md           web.md                frontend.md   mobile.md
 
 ### 본인 사례
 [실제 프로젝트에서 클로저 때문에 고생했거나 활용한 경험]
+
+### 관련 문서
+- [클로저 상세](../../02-language/javascript/closure.md)
 ```
-
-## 학습 진도 관리 팁
-
-각 질문 앞에 다음 라벨 중 하나를 붙여 진도를 표시:
-
-- 처음 보는 질문 → `[NEW]`
-- 답은 하지만 정리가 필요 → `[REVIEW]`
-- 자신 있게 설명 가능 → `[OK]`
-- 꼬리 질문까지 대응 가능 → `[MASTER]`
-
-예시:
-
-- `[NEW]` Q. 이벤트 루프란?
-- `[REVIEW]` Q. 클로저란?
-- `[OK]` Q. REST와 GraphQL 차이는?
-- `[MASTER]` Q. CAP 정리를 실 사례와 함께 설명.
-
-`README` 상단에 라벨별 개수를 적어두면 진도가 한눈에 보이고,
-`grep -c "\[NEW\]" *.md` 같은 명령으로 자동 집계도 가능.
 
 ## 참고할 만한 외부 저장소
 

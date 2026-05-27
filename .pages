@@ -1,0 +1,16 @@
+nav:
+  - 홈: README.md
+  - 01-computer-science
+  - 02-language
+  - '백엔드 & 인프라':
+    - 03-backend
+    - 04-system-design
+    - 05-devops-infra
+    - 06-security
+  - 클라이언트:
+    - 07-web
+    - 08-frontend
+    - 09-mobile
+  - 10-ai-data
+  - 99-interview-questions
+  - resources

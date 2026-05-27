@@ -1,13 +1,7 @@
 # 카테고리별 면접 질문
 
-각 파일은 카테고리별 Q&A 카드 모음. 진도 라벨로 상태 관리.
-
-## 진도 라벨
-
-- `[NEW]` — 아직 답을 정리하지 못함
-- `[REVIEW]` — 답은 하지만 정리가 필요
-- `[OK]` — 자신 있게 설명 가능
-- `[MASTER]` — 꼬리 질문까지 대응 가능
+각 파일은 영역별 Q&A 카드 모음입니다. 본문이 풍부해진 항목은
+`../../<영역 폴더>/<주제>.md` 로 옮기고 카드는 링크만 남깁니다.
 
 ## 파일 목록
 
@@ -28,15 +22,12 @@
 | [mobile.md](./mobile.md) | 모바일 | [09-mobile](../../09-mobile/) |
 | [ai-data.md](./ai-data.md) | AI / 데이터 | [10-ai-data](../../10-ai-data/) |
 
-## 진도 집계
+## 질문 개수 확인
 
 ```bash
-# NEW 라벨 개수 세기
-grep -c '`\[NEW\]`' *.md
-
-# 전체 라벨별 합계
-for label in NEW REVIEW OK MASTER; do
-  echo -n "[$label]: "
-  grep -rh "\`\[$label\]\`" . | wc -l
+# 카테고리별 질문 수
+for f in *.md; do
+  [ "$f" = "README.md" ] && continue
+  printf '%-30s %s\n' "$f" "$(grep -c '^## Q\.' "$f")"
 done
 ```
