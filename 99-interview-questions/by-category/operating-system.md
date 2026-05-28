@@ -1,6 +1,6 @@
 # 운영체제 (Operating System)
 
-본문 폴더: [01-computer-science/operating-system](../../01-computer-science/operating-system/)
+본문 폴더: [01-computer-science/operating-system](<../../01-computer-science/operating-system(OS)/>)
 
 ---
 

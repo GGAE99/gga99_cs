@@ -19,7 +19,7 @@
 | 카드 파일 | 영역 | 본문 폴더 |
 |----------|------|----------|
 | [data-structure.md](./by-category/data-structure.md) | 자료구조 | [01-computer-science/data-structure](../01-computer-science/data-structure/) |
-| [operating-system.md](./by-category/operating-system.md) | 운영체제 | [01-computer-science/operating-system](../01-computer-science/operating-system/) |
+| [operating-system.md](./by-category/operating-system.md) | 운영체제 | [01-computer-science/operating-system](<../01-computer-science/operating-system(OS)/>) |
 | [network.md](./by-category/network.md) | 네트워크 | [01-computer-science/network](../01-computer-science/network/) |
 | [database.md](./by-category/database.md) | 데이터베이스 | [01-computer-science/database](../01-computer-science/database/) |
 | [computer-architecture.md](./by-category/computer-architecture.md) | 컴퓨터 구조 | [01-computer-science/computer-architecture](../01-computer-science/computer-architecture/) |

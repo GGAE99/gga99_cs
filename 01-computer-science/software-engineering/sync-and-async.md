@@ -385,10 +385,10 @@ async def fetch():
 
 ## 9. 관련 주제
 
-- [프로세스와 스레드](./process-and-thread.md) — 동기/비동기의 기반
-- [CPU 스케줄링](./cpu-scheduling.md) — 동기 작업의 sleep, 비동기 작업의 ready 큐
-- [인터럽트와 시스템 콜](./interrupt-and-syscall.md) — 비동기 I/O 완료 통지
-- [I/O 관리](./io-management.md) — epoll, io_uring, C10K 문제
+- [프로세스와 스레드](<../operating-system(OS)/process-and-thread.md>) — 동기/비동기의 기반
+- [CPU 스케줄링](<../operating-system(OS)/cpu-scheduling.md>) — 동기 작업의 sleep, 비동기 작업의 ready 큐
+- [인터럽트와 시스템 콜](<../operating-system(OS)/interrupt-and-syscall.md>) — 비동기 I/O 완료 통지
+- [I/O 관리](<../operating-system(OS)/io-management.md>) — epoll, io_uring, C10K 문제
 
 ---
 
