@@ -23,7 +23,6 @@ theme:
   language: ko
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.path
