@@ -12,12 +12,33 @@
 ## 구조
 
 ### [by-category/](./by-category/) — 카테고리별
-```
-data-structure.md     알고리즘.md           operating-system.md
-network.md            database.md           computer-architecture.md
-software-engineering.md  language-{js,ts,java,kotlin,python}.md
-backend.md            system-design.md      devops.md
-security.md           web.md                frontend.md   mobile.md
+
+각 파일은 영역별 Q&A 카드 모음. 본문이 풍부해진 항목은
+`../<영역 폴더>/<주제>.md` 로 옮기고 카드는 링크만 남긴다.
+
+| 카드 파일 | 영역 | 본문 폴더 |
+|----------|------|----------|
+| [data-structure.md](./by-category/data-structure.md) | 자료구조 | [01-computer-science/data-structure](../01-computer-science/data-structure/) |
+| [operating-system.md](./by-category/operating-system.md) | 운영체제 | [01-computer-science/operating-system](../01-computer-science/operating-system/) |
+| [network.md](./by-category/network.md) | 네트워크 | [01-computer-science/network](../01-computer-science/network/) |
+| [database.md](./by-category/database.md) | 데이터베이스 | [01-computer-science/database](../01-computer-science/database/) |
+| [computer-architecture.md](./by-category/computer-architecture.md) | 컴퓨터 구조 | [01-computer-science/computer-architecture](../01-computer-science/computer-architecture/) |
+| [software-engineering.md](./by-category/software-engineering.md) | SW 공학 | [01-computer-science/software-engineering](../01-computer-science/software-engineering/) |
+| [language-js.md](./by-category/language-js.md) | JavaScript | [02-language/javascript](../02-language/javascript/) |
+| [language-ts.md](./by-category/language-ts.md) | TypeScript | [02-language/typescript](../02-language/typescript/) |
+| [backend.md](./by-category/backend.md) | 백엔드 | [03-backend](../03-backend/) |
+| [devops.md](./by-category/devops.md) | DevOps / 인프라 | [05-devops-infra](../05-devops-infra/) |
+| [web.md](./by-category/web.md) | 웹 / 브라우저 | [07-web](../07-web/) |
+| [frontend.md](./by-category/frontend.md) | 프론트엔드 | [08-frontend](../08-frontend/) |
+| [mobile.md](./by-category/mobile.md) | 모바일 | [09-mobile](../09-mobile/) |
+| [ai-data.md](./by-category/ai-data.md) | AI / 데이터 | [10-ai-data](../10-ai-data/) |
+
+**카테고리별 질문 수 확인**
+```bash
+cd by-category
+for f in *.md; do
+  printf '%-30s %s\n' "$f" "$(grep -c '^## Q\.' "$f")"
+done
 ```
 
 ### [by-difficulty/](./by-difficulty/) — 난이도별
