@@ -15,6 +15,7 @@ exclude_docs: |
   /.github/
   /.omc/
   /_site/
+  /scripts/
   /mkdocs.yml
   /requirements.txt
 

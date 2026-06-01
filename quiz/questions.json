@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-06-01T05:50:56+00:00",
+  "categories": [
+    {
+      "id": "operating-system",
+      "label": "운영체제",
+      "count": 2
+    }
+  ],
+  "questions": [
+    {
+      "id": "operating-system-2562f0da",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "프로세스와 스레드에 대해 설명하시오.",
+      "answer": "자원 단위 vs 실행 단위 (메모리 공유 여부, 컨텍스트 스위칭 비용 차이)",
+      "distractors": [
+        "컴파일러 최적화 단위 vs 런타임 실행 단위",
+        "동기/비동기 호출 방식의 구분",
+        "CPU 캐시 L1/L2 계층 분리 모델"
+      ],
+      "explanation": "프로세스는 자원 단위, 스레드는 실행 단위. 메모리 공유 여부, 컨텍스트 스위칭 비용.",
+      "followups": [
+        "스레드 간 통신과 프로세스 간 통신의 차이는?",
+        "멀티스레드 환경의 디버깅이 어려운 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-bedd77d7",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "세마포어에 대해 간략하게 설명하시오.",
+      "answer": "정수 카운터 기반 동기화. wait(P)/signal(V)로 자원 풀 관리에 적합",
+      "distractors": [
+        "소유 개념의 이진 락. 락을 획득한 스레드만 해제 가능",
+        "CPU에 외부/내부 이벤트를 비동기로 통지하는 메커니즘",
+        "가변 분할 메모리 할당 시 First/Worst/Best Fit 전략"
+      ],
+      "explanation": "정수 카운터 기반 동기화. wait(P) / signal(V). 자원 풀 관리에 적합.",
+      "followups": [
+        "이진 세마포어가 뮤텍스를 대체할 수 있는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    }
+  ]
+}
