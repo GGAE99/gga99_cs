@@ -46,7 +46,8 @@ CATEGORY_LABELS: dict[str, str] = {
 
 CARD_SEPARATOR = re.compile(r"\n\s*---\s*\n")
 RE_QUESTION = re.compile(r"^##\s*Q\.\s*(.+?)\s*$", re.MULTILINE)
-RE_QUIZ_HEADER = re.compile(r'^\?\?\?\+?\s*quiz\b[^\n]*$', re.MULTILINE)
+# note 어드모니션 + 제목이 "정답"으로 시작하는 블록만 퀴즈로 인식
+RE_QUIZ_HEADER = re.compile(r'^\?\?\?\+?\s*note\b[^"\n]*"\s*정답[^"\n]*"', re.MULTILINE)
 RE_QUIZ_OPTION = re.compile(r"^\s{4,}-\s*\[(x| )\]\s*(.+?)\s*$", re.MULTILINE)
 RE_SECTION = re.compile(r"^###\s+(.+?)\s*$", re.MULTILINE)
 RE_BLOCKQUOTE_LINE = re.compile(r"^>\s?(.*)$")
