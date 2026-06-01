@@ -256,7 +256,44 @@ def main() -> int:
     )
     print()
     print(f"✅ {len(all_questions)} 문항 → {OUTPUT_FILE.relative_to(ROOT)}")
+    _print_length_bias_report(all_questions)
     return 0
+
+
+def _print_length_bias_report(questions: list[QuizQuestion]) -> None:
+    """정답이 오답보다 일관되게 길면 '긴 거 누르면 정답' 현상이 발생.
+    각 카드의 정답 길이 vs 오답 평균 길이를 비교해 경고 신호를 출력.
+    """
+    if not questions:
+        return
+    bias_warn_ratio = 1.2  # 정답/오답평균 비율 임계치
+    longest_correct = 0
+    biased = []
+    for q in questions:
+        ans = len(q.answer)
+        dists = [len(d) for d in q.distractors] or [0]
+        avg_d = sum(dists) / len(dists)
+        max_d = max(dists)
+        if ans >= max_d:
+            longest_correct += 1
+        if avg_d and ans / avg_d > bias_warn_ratio:
+            biased.append((q.category, q.question, ans, max_d, avg_d, ans / avg_d))
+
+    total = len(questions)
+    pct = longest_correct * 100 // total
+    print()
+    print("── 길이 편향 진단 ──────────────────────────────────")
+    print(f"  정답이 가장 긴 카드:           {longest_correct}/{total} ({pct}%)  목표 ≤ 50%")
+    print(f"  정답/오답평균 > {bias_warn_ratio:>3} 인 카드:   {len(biased)}/{total}  목표 ≤ {total // 5}")
+
+    if biased:
+        biased.sort(key=lambda x: -x[5])
+        print()
+        print("  Top 5 편향 카드 (정답 길이가 너무 도드라짐):")
+        for cat, question, ans, max_d, avg_d, ratio in biased[:5]:
+            short = question[:38] + ("…" if len(question) > 38 else "")
+            print(f"    {cat:22s} ans={ans:3d}  avgD={avg_d:4.0f}  x{ratio:.2f}  {short}")
+    print()
 
 
 if __name__ == "__main__":

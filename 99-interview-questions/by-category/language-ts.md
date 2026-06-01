@@ -8,9 +8,9 @@
 
 ??? note "정답 보기 ▼"
     - [x] 타입을 파라미터화하여 호출 시점에 타입이 결정되는, 재사용 가능한 컴포넌트/함수 작성 기법
-    - [ ] any로 선언된 변수에 자동으로 런타임 타입 검사가 들어가는 기능
-    - [ ] 타입을 명시하지 않고 컴파일러가 변수 사용 패턴을 추론하는 타입 인퍼런스
-    - [ ] 클래스 상속을 통한 다형성으로, OOP의 상속 메커니즘과 동일한 개념
+    - [ ] 컴파일러가 변수의 초기값과 사용 패턴을 보고 명시 없이 타입을 결정해 주는 타입 추론(type inference)
+    - [ ] 같은 함수명이 매개변수 시그니처별로 다른 동작을 갖도록 선언할 수 있는 함수 오버로딩(function overload)
+    - [ ] 유니온/인터섹션·조건부 타입 등으로 기존 타입을 가공해 새 타입을 만드는 매핑드 타입(mapped types)
 
 ### 핵심 답안 (30초)
 > _타입을 파라미터화하여 재사용 가능한 컴포넌트/함수 작성. 호출 시점에 타입 결정._
@@ -26,9 +26,9 @@
 
 ??? note "정답 보기 ▼"
     - [x] enum은 양방향 매핑 코드를 생성해 번들이 커지고, `const object + as const`는 트리 셰이킹과 타입 안전성을 함께 얻음
-    - [ ] enum은 런타임에 사라지고 object는 코드로 남는다 (정반대)
-    - [ ] 둘 다 컴파일 결과가 동일해서 어느 쪽을 써도 차이가 없다
-    - [ ] enum은 문자열만, object는 숫자만 키로 사용할 수 있다
+    - [ ] `const enum`은 인라인 치환되어 런타임에 흔적이 없지만 isolatedModules와 충돌해 쓰지 못하는 환경이 많음
+    - [ ] `union of string literals`는 enum과 유사한 타입 안전성을 주지만 값 자체가 런타임에 노출되지 않음
+    - [ ] readonly 배열 + 인덱싱 패턴은 enum보다 표현력이 떨어지지만 정렬·반복에 강해 자주 쓰임
 
 ### 핵심 답안 (30초)
 > _enum: 컴파일 결과 코드 증가, 양방향 매핑. const object + as const: 트리 셰이킹 가능, 타입 안전성 유지._
@@ -43,9 +43,9 @@
 
 ??? note "정답 보기 ▼"
     - [x] 런타임 비용은 0이고 컴파일 시간이 문제 — `incremental`, `skipLibCheck`, project references, 복잡한 조건부 타입 단순화로 대응
-    - [ ] 타입은 런타임에 메모리를 차지하므로 적게 선언해야 한다
-    - [ ] tsc는 자동 최적화가 없어 사용자가 직접 dead-type elimination을 수행해야 한다
-    - [ ] type 키워드 대신 모두 class로 바꾸면 컴파일 시간이 줄어든다
+    - [ ] `tsc --diagnostics`로 체크 시간 병목을 파악하고 자주 변하지 않는 의존 패키지의 d.ts는 사전 빌드해 캐시한다
+    - [ ] 무거운 매핑드 타입은 helper 타입으로 추출하고 깊은 재귀 조건부 타입은 leaf 케이스를 우선 분기해 단순화한다
+    - [ ] `tsserver`의 LSP 응답이 느려질 때는 에디터 별 메모리 옵션과 incremental 빌드 캐시를 우선 점검한다
 
 ### 핵심 답안 (30초)
 > _타입은 런타임에 제거됨(zero runtime cost). 성능 이슈는 주로 컴파일 시간 — `incremental`, `skipLibCheck`, project references, 복잡한 조건부 타입 단순화._
@@ -60,9 +60,9 @@
 
 ??? note "정답 보기 ▼"
     - [x] ESM 기반 import/export로 파일 단위 캡슐화 — namespace, module declaration, ambient module 형태도 존재
-    - [ ] 모든 모듈이 단일 글로벌 스코프에 합쳐져 평탄화되어 컴파일된다
-    - [ ] TypeScript에는 모듈 시스템이 없고 CommonJS만 사용 가능하다
-    - [ ] 모듈은 컴파일 시 제거되고 런타임에는 전부 인라인 코드로 변환된다
+    - [ ] `tsconfig`의 `module` / `moduleResolution` 옵션으로 CJS·ESM·NodeNext 등 산출물의 모듈 시스템을 결정하는 설정
+    - [ ] 외부 자바스크립트 라이브러리의 타입만 별도로 기술해 임포트할 수 있도록 만든 `.d.ts` 선언 파일
+    - [ ] 동일 디렉터리 안의 여러 파일을 하나의 진입점으로 모아 다시 내보내는 배럴(barrel) 파일 패턴
 
 ### 핵심 답안 (30초)
 > _ESM 기반 import/export. 파일 단위 캡슐화. namespace, module declaration, ambient module._
