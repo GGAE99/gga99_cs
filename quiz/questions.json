@@ -1,13 +1,1305 @@
 {
-  "generated_at": "2026-06-01T06:18:50+00:00",
+  "generated_at": "2026-06-01T07:03:12+00:00",
   "categories": [
+    {
+      "id": "ai-data",
+      "label": "AI / 데이터",
+      "count": 1
+    },
+    {
+      "id": "devops",
+      "label": "DevOps / 인프라",
+      "count": 2
+    },
+    {
+      "id": "language-js",
+      "label": "JavaScript",
+      "count": 16
+    },
+    {
+      "id": "software-engineering",
+      "label": "SW 공학",
+      "count": 3
+    },
+    {
+      "id": "language-ts",
+      "label": "TypeScript",
+      "count": 4
+    },
+    {
+      "id": "network",
+      "label": "네트워크",
+      "count": 10
+    },
+    {
+      "id": "database",
+      "label": "데이터베이스",
+      "count": 3
+    },
+    {
+      "id": "mobile",
+      "label": "모바일",
+      "count": 1
+    },
+    {
+      "id": "backend",
+      "label": "백엔드",
+      "count": 8
+    },
     {
       "id": "operating-system",
       "label": "운영체제",
-      "count": 2
+      "count": 11
+    },
+    {
+      "id": "web",
+      "label": "웹 / 브라우저",
+      "count": 12
+    },
+    {
+      "id": "data-structure",
+      "label": "자료구조",
+      "count": 5
+    },
+    {
+      "id": "computer-architecture",
+      "label": "컴퓨터 구조",
+      "count": 4
+    },
+    {
+      "id": "frontend",
+      "label": "프론트엔드",
+      "count": 10
     }
   ],
   "questions": [
+    {
+      "id": "ai-data-3a6f93b8",
+      "category": "ai-data",
+      "category_label": "AI / 데이터",
+      "question": "ML과 LLM에 대해 간략하게 설명하시오.",
+      "answer": "ML은 데이터에서 패턴을 학습하는 알고리즘 군, LLM은 대규모 텍스트로 학습된 Transformer 언어 모델 (ML의 하위)",
+      "distractors": [
+        "ML은 통계 기법이고 LLM은 규칙 기반 시스템으로 본질적으로 다른 계열",
+        "LLM은 ML보다 상위 개념으로, 모든 ML은 LLM의 한 형태",
+        "ML은 학습이 필요하고 LLM은 학습 없이 즉시 추론 가능한 사전 정의 모델"
+      ],
+      "explanation": "ML: 데이터에서 패턴을 학습하는 알고리즘 군. LLM: 대규모 텍스트 코퍼스로 학습된 Transformer 기반 언어 모델 (ML의 하위 분야).",
+      "followups": [
+        "지도/비지도/강화학습의 차이는?",
+        "LLM의 한계(환각, 컨텍스트 길이)는 무엇이고 어떻게 보완하나? (RAG, Fine-tuning)",
+        "Transformer 구조의 핵심 아이디어는? (Attention)"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/ai-data.md"
+    },
+    {
+      "id": "backend-db5e0e98",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "REST API에 대해 설명하시오.",
+      "answer": "리소스 중심·HTTP 메서드 활용·Stateless·표현 계층 분리 — Roy Fielding이 정의한 아키텍처 스타일",
+      "distractors": [
+        "모든 통신을 단일 POST 엔드포인트로 통일하고 본문에 메서드명을 담는 RPC 스타일",
+        "서버가 양방향 푸시를 위해 WebSocket 위에서 정의하는 메시지 프로토콜",
+        "데이터베이스 스키마를 그대로 JSON으로 노출하는 자동 생성 API"
+      ],
+      "explanation": "리소스 중심, HTTP 메서드 활용, Stateless, 표현 계층 분리. Roy Fielding의 아키텍처 스타일.",
+      "followups": [
+        "REST의 6가지 제약 조건은?",
+        "HATEOAS란? 실무에서 잘 안 쓰이는 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-b0b55af5",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "REST API 설계 시 주의할 점을 설명하시오.",
+      "answer": "리소스 명사형 URL, 일관된 메서드, 적절한 상태 코드, 버저닝, 페이지네이션, 멱등성 고려",
+      "distractors": [
+        "모든 요청을 POST로 통일하고 응답은 항상 200으로 반환해 클라이언트를 단순화",
+        "URL에 동사를 사용해 행위를 명확히 하고 메서드는 GET만 사용",
+        "인증·인가는 클라이언트가 알아서 처리하도록 서버에서는 검증하지 않는다"
+      ],
+      "explanation": "리소스 명사형 URL, 일관된 메서드 사용, 적절한 상태 코드, 버저닝, 페이지네이션, 멱등성.",
+      "followups": [
+        "POST와 PUT의 차이를 멱등성 관점에서 설명하면?",
+        "400과 422는 어떻게 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-e37fc05b",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "쿠키와 세션을 왜 사용하는가?",
+      "answer": "HTTP가 Stateless이기 때문에 사용자 상태 유지를 위해 쿠키(클라이언트 저장) + 세션(서버 저장)으로 보완",
+      "distractors": [
+        "HTTPS의 암호화 키를 매 요청마다 교환하기 위해 사용",
+        "HTTP 요청 본문이 평문이라 본문을 암호화하기 위한 메커니즘",
+        "브라우저 캐시 만료 시간을 서버가 제어하기 위한 도구"
+      ],
+      "explanation": "HTTP는 Stateless. 사용자 상태 유지를 위해 쿠키(클라이언트 저장) + 세션(서버 저장)으로 보완.",
+      "followups": [
+        "HttpOnly, Secure, SameSite 속성의 역할은?",
+        "세션을 여러 서버에서 공유하려면 어떻게 하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-9efe08ee",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "JWT는 무엇이고 어떻게 사용되는가?",
+      "answer": "Header.Payload.Signature 구조의 서명된 자기 완결형 토큰. Stateless 인증에 활용",
+      "distractors": [
+        "서버 세션 ID를 암호화한 쿠키 값으로, 서버 저장소가 필수",
+        "OAuth 2.0의 인가 코드 그 자체로, 단독으로 인증 정보를 담지 않음",
+        "클라이언트에서 평문으로 저장되며 위변조 검증은 별도 호출이 필요"
+      ],
+      "explanation": "JSON Web Token. Header.Payload.Signature. 서명된 자기 완결형 토큰. Stateless 인증에 활용.",
+      "followups": [
+        "JWT는 어디에 저장해야 하나? (localStorage vs Cookie)",
+        "토큰 탈취 시 어떻게 무효화하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-0146c02f",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "세션과 JWT의 차이점은 무엇인가?",
+      "answer": "세션은 서버가 상태를 보관해 즉시 무효화 가능, JWT는 서버 무상태로 확장이 쉽지만 즉시 무효화가 어려움",
+      "distractors": [
+        "JWT는 서버에 저장되고 세션은 클라이언트에 저장된다 (정반대)",
+        "둘 다 서버 메모리에 동일하게 저장되며 차이는 토큰 길이뿐이다",
+        "JWT는 HTTPS에서만 동작하고 세션은 HTTP에서만 동작한다"
+      ],
+      "explanation": "세션: 서버 상태 보관, 무효화 즉시. JWT: 서버 무상태, 확장 용이하지만 즉시 무효화 어려움.",
+      "followups": [
+        "리프레시 토큰 회전(rotation)이란?",
+        "마이크로서비스에서 JWT가 선호되는 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-8b7c160f",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "BFF(Backend For Frontend)란 무엇인가?",
+      "answer": "클라이언트 종류(웹/모바일 등)별로 전용 백엔드를 두어 응답 가공·집계·UI 친화적 API를 제공하는 패턴",
+      "distractors": [
+        "프론트엔드 코드를 백엔드 서버에서 SSR로 렌더링하는 Next.js 같은 프레임워크",
+        "백엔드 서비스를 프론트엔드 개발자가 직접 작성하도록 만든 풀스택 협업 모델",
+        "백엔드 응답을 가공 없이 그대로 전달하는 단순 프록시 계층"
+      ],
+      "explanation": "클라이언트 종류별로 전용 백엔드를 두는 패턴. 응답 가공·집계·UI 친화적 API.",
+      "followups": [
+        "API Gateway와 BFF는 어떻게 다른가?",
+        "BFF의 단점은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-8d8420c2",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "톰캣(Tomcat)에 대해 설명하시오.",
+      "answer": "Servlet/JSP 실행 환경을 제공하는 Servlet 컨테이너이며 Spring Boot의 내장 기본 WAS",
+      "distractors": [
+        "정적 파일만 서빙하는 웹 서버로 Servlet은 처리할 수 없다",
+        "JVM 위에서 동작하는 데이터베이스 엔진의 한 종류",
+        "Spring 프레임워크의 일부 모듈로 별도 실행이 불가능하다"
+      ],
+      "explanation": "Servlet 컨테이너. JSP/Servlet 실행 환경. Spring Boot 내장 기본 WAS.",
+      "followups": [
+        "WAS와 웹 서버의 차이는?",
+        "톰캣의 NIO Connector와 BIO Connector의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "backend-d4ec3992",
+      "category": "backend",
+      "category_label": "백엔드",
+      "question": "서버리스란 무엇인가?",
+      "answer": "서버 관리를 추상화한 실행 모델 — FaaS(Lambda 등) + BaaS, 사용량 기반 과금",
+      "distractors": [
+        "물리 서버를 두지 않고 P2P 네트워크만으로 동작하는 분산 시스템",
+        "서버 코드 없이 클라이언트만으로 모든 비즈니스 로직을 처리하는 방식",
+        "HTTP 서버 없이 RPC만으로 서비스 간 통신을 구성하는 패턴"
+      ],
+      "explanation": "서버 관리를 추상화한 실행 모델. FaaS(Lambda 등) + BaaS. 사용량 기반 과금.",
+      "followups": [
+        "콜드 스타트는 무엇이고 어떻게 완화하나?",
+        "서버리스가 부적합한 워크로드는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/backend.md"
+    },
+    {
+      "id": "computer-architecture-7d4897fe",
+      "category": "computer-architecture",
+      "category_label": "컴퓨터 구조",
+      "question": "1011(2)의 보수값을 구하시오.",
+      "answer": "1의 보수: 0100, 2의 보수: 0101",
+      "distractors": [
+        "1의 보수: 0101, 2의 보수: 0100",
+        "1의 보수: 1100, 2의 보수: 1101",
+        "1의 보수: 0100, 2의 보수: 0110"
+      ],
+      "explanation": "1의 보수: 0100. 2의 보수: 0101. 비트 수가 명시되지 않은 경우 가정 명확히.",
+      "followups": [
+        "2의 보수가 음수 표현의 표준이 된 이유는?",
+        "부동소수점에서 0.1 + 0.2 ≠ 0.3 인 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/computer-architecture.md"
+    },
+    {
+      "id": "computer-architecture-bf13fc4d",
+      "category": "computer-architecture",
+      "category_label": "컴퓨터 구조",
+      "question": "오퍼랜드(Operand)에 대해 간략하게 설명하시오.",
+      "answer": "명령어에서 연산의 대상이 되는 값 또는 주소 (명령어 = opcode + operand)",
+      "distractors": [
+        "CPU가 수행할 연산의 종류를 지정하는 비트 필드",
+        "메모리에서 명령어를 가져오는 단계의 신호 제어 유닛",
+        "명령어 실행 결과를 임시로 저장하는 누산기 레지스터"
+      ],
+      "explanation": "연산의 대상이 되는 값/주소. 명령어 = opcode + operand 구조.",
+      "followups": [
+        "0-주소 / 1-주소 / 2-주소 / 3-주소 명령어 형식이란?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/computer-architecture.md"
+    },
+    {
+      "id": "computer-architecture-587b9843",
+      "category": "computer-architecture",
+      "category_label": "컴퓨터 구조",
+      "question": "CPU의 시간 지역성과 공간 지역성에 대해 설명하시오.",
+      "answer": "시간: 최근 참조한 데이터를 곧 다시 참조 / 공간: 참조 데이터 근처를 함께 참조 — 캐시 효율의 근거",
+      "distractors": [
+        "시간: 명령어 실행 순서대로의 의존성 / 공간: 메모리 페이지 단위 격리",
+        "시간: 인터럽트 우선순위 결정 기준 / 공간: NUMA 노드 간 거리",
+        "시간과 공간 모두 멀티스레드 동기화에서 락 충돌을 줄이는 전략"
+      ],
+      "explanation": "시간: 최근 참조한 데이터를 곧 다시 참조. 공간: 참조한 데이터 근처를 함께 참조. 캐시 효율성의 근거.",
+      "followups": [
+        "배열 순회와 연결 리스트 순회의 캐시 효율 차이는?",
+        "2차원 배열을 row-major / column-major로 순회할 때의 성능 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/computer-architecture.md"
+    },
+    {
+      "id": "computer-architecture-fe50ea56",
+      "category": "computer-architecture",
+      "category_label": "컴퓨터 구조",
+      "question": "프로그램 카운터(PC)에 대해 설명하시오.",
+      "answer": "다음에 실행할 명령어의 주소를 담는 레지스터, 분기·점프 시 갱신",
+      "distractors": [
+        "현재 실행 중인 명령어 자체를 보관하는 레지스터",
+        "산술/논리 연산 결과의 부호·자리올림 등을 표시하는 플래그 레지스터",
+        "함수 호출 시 복귀 주소를 쌓아두는 스택 포인터"
+      ],
+      "explanation": "다음에 실행할 명령어의 주소를 담는 레지스터. 분기·점프 시 갱신.",
+      "followups": [
+        "PC와 IR(Instruction Register)의 차이는?",
+        "컨텍스트 스위칭 시 PC는 어디에 저장되는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/computer-architecture.md"
+    },
+    {
+      "id": "data-structure-a05be54f",
+      "category": "data-structure",
+      "category_label": "자료구조",
+      "question": "Array, Dynamic Array, Linked List를 비교해서 설명하시오.",
+      "answer": "메모리 연속성·접근 O(1) vs O(n)·삽입/삭제 비용·크기 가변성에서 차이 (Array: 고정 / Dynamic Array: amortized 확장 / Linked List: 노드+포인터)",
+      "distractors": [
+        "세 자료구조 모두 무작위 접근 O(1)이며 차이는 메모리 사용량뿐",
+        "Linked List가 Dynamic Array보다 캐시 친화적이고 더 빠르다",
+        "Array는 가변 크기이고 Dynamic Array는 고정 크기다"
+      ],
+      "explanation": "작성 예정 — 메모리 배치, 접근 시간, 삽입·삭제 비용, 크기 가변성 관점으로 비교.",
+      "followups": [
+        "동적 배열의 amortized O(1) push가 가능한 이유는?",
+        "연결 리스트가 캐시 친화적이지 않은 이유는?",
+        "자바스크립트 Array는 진짜 배열인가, 객체인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/data-structure.md"
+    },
+    {
+      "id": "data-structure-eb7cc6f9",
+      "category": "data-structure",
+      "category_label": "자료구조",
+      "question": "Queue와 Stack을 비교하여 설명하시오.",
+      "answer": "Stack은 LIFO(후입선출), Queue는 FIFO(선입선출) — 둘 다 push/pop은 O(1)",
+      "distractors": [
+        "Stack은 FIFO, Queue는 LIFO 구조",
+        "둘 다 무작위 접근(인덱스)이 O(1)이며 차이는 메모리 위치뿐",
+        "Stack은 정렬을 보장하고 Queue는 정렬을 보장하지 않는다"
+      ],
+      "explanation": "LIFO vs FIFO. 사용 사례, 구현 방식(배열/연결리스트), 시간 복잡도.",
+      "followups": [
+        "두 스택으로 큐를 구현할 수 있는가?",
+        "Deque는 어떤 자료구조인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/data-structure.md"
+    },
+    {
+      "id": "data-structure-b4221687",
+      "category": "data-structure",
+      "category_label": "자료구조",
+      "question": "BST와 Hash Table을 비교해 설명하시오.",
+      "answer": "BST는 순서 보존·범위 검색 가능·평균 O(log n), Hash는 순서 없음·평균 O(1)·최악 O(n)",
+      "distractors": [
+        "BST는 O(1) 평균 시간 복잡도이고 Hash는 O(log n)이다",
+        "Hash는 키의 순서대로 순회가 가능하고 BST는 불가능하다",
+        "BST는 충돌 처리가 필요하고 Hash는 충돌이 발생하지 않는다"
+      ],
+      "explanation": "순서 보존 vs 해시 분산, 평균/최악 시간 복잡도, 메모리, 범위 검색 가능성.",
+      "followups": [
+        "해시 충돌은 어떻게 해결하나? (체이닝 / 개방 주소법)",
+        "균형 BST(AVL, Red-Black)가 필요한 이유는?",
+        "DB 인덱스에 B-Tree가 쓰이고 Hash가 잘 안 쓰이는 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/data-structure.md"
+    },
+    {
+      "id": "data-structure-10d43820",
+      "category": "data-structure",
+      "category_label": "자료구조",
+      "question": "Linked List(연결 리스트)에 대해 설명하시오.",
+      "answer": "노드 + 포인터 구조 — 단일/이중/원형 형태. 접근 O(n), 삽입·삭제 O(1)",
+      "distractors": [
+        "메모리에 연속 저장되는 자료구조로, 무작위 접근이 O(1)이다",
+        "항상 정렬된 상태를 유지하며 이진 탐색이 가능한 구조",
+        "해시 함수로 인덱스를 계산하는 자료구조"
+      ],
+      "explanation": "노드 + 포인터 구조. 단일/이중/원형, 접근 O(n), 삽입·삭제 O(1).",
+      "followups": [
+        "이중 연결 리스트가 필요한 경우는?",
+        "LRU 캐시 구현에 왜 연결 리스트가 등장하는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/data-structure.md"
+    },
+    {
+      "id": "data-structure-50f95651",
+      "category": "data-structure",
+      "category_label": "자료구조",
+      "question": "LRU 캐시에 대해 설명하시오.",
+      "answer": "Least Recently Used — HashMap + Doubly Linked List 조합으로 O(1) get/put 구현",
+      "distractors": [
+        "Least Frequently Used — 참조 횟수가 가장 적은 항목을 제거하는 정책",
+        "FIFO 큐 한 개만으로 구현되며 평균 시간 복잡도는 O(n)이다",
+        "모든 항목을 정렬된 트리에 저장하고 최저 우선순위 항목을 제거하는 방식"
+      ],
+      "explanation": "Least Recently Used. HashMap + Doubly Linked List로 O(1) get/put.",
+      "followups": [
+        "LFU와의 차이는?",
+        "Redis의 maxmemory-policy에는 어떤 것들이 있나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/data-structure.md"
+    },
+    {
+      "id": "database-21d2ad17",
+      "category": "database",
+      "category_label": "데이터베이스",
+      "question": "트랜잭션에 대해 간략하게 설명하시오.",
+      "answer": "하나의 논리적 작업 단위로, ACID(원자성·일관성·격리성·지속성)를 보장",
+      "distractors": [
+        "DB에 변경을 반영하기 전에 메모리에서만 수행하는 임시 캐시 작업",
+        "여러 DB 노드 간 데이터를 동기화하는 복제 메커니즘",
+        "SQL 쿼리를 미리 컴파일해 두는 실행 계획 최적화 단위"
+      ],
+      "explanation": "하나의 논리적 작업 단위. ACID 속성(원자성·일관성·격리성·지속성) 보장.",
+      "followups": [
+        "격리 수준(Read Uncommitted ~ Serializable) 4가지의 차이는?",
+        "분산 트랜잭션은 어떻게 처리하나? (2PC, SAGA)"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/database.md"
+    },
+    {
+      "id": "database-64b27f3e",
+      "category": "database",
+      "category_label": "데이터베이스",
+      "question": "SQL과 NoSQL의 차이점을 설명하시오.",
+      "answer": "SQL은 정형 스키마·관계·강한 일관성, NoSQL은 유연한 스키마·수평 확장·다양한 데이터 모델",
+      "distractors": [
+        "SQL은 오픈소스이고 NoSQL은 상용 라이선스만 존재한다",
+        "SQL은 트랜잭션을 지원하지 않고 NoSQL만 트랜잭션을 지원한다",
+        "SQL은 쿼리 언어가 표준화돼 있지 않고 NoSQL이 표준화돼 있다"
+      ],
+      "explanation": "SQL: 정형 스키마·관계·강한 일관성. NoSQL: 유연한 스키마·수평 확장·다양한 모델(Doc/KV/Column/Graph).",
+      "followups": [
+        "CAP 정리 관점에서 SQL/NoSQL은 어디에 위치하나?",
+        "어떤 워크로드에 어떤 DB가 적합한가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/database.md"
+    },
+    {
+      "id": "database-cd1f6d0d",
+      "category": "database",
+      "category_label": "데이터베이스",
+      "question": "RDB와 NoSQL의 차이를 설명하시오.",
+      "answer": "스키마 유연성, JOIN 가능 여부, 확장 방식(수직/수평), 일관성 모델에서 차이",
+      "distractors": [
+        "데이터를 저장하는 물리 디스크 포맷이 다르고 쿼리 언어는 동일하다",
+        "RDB는 인메모리 전용이고 NoSQL은 디스크 기반이다",
+        "RDB는 단일 노드만 가능하고 NoSQL은 무조건 분산 노드만 가능하다"
+      ],
+      "explanation": "스키마 유연성, JOIN 가능 여부, 확장 방식(수직/수평), 일관성 모델.",
+      "followups": [
+        "MongoDB의 트랜잭션은 RDB와 어떻게 다른가?",
+        "Polyglot Persistence란?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/database.md"
+    },
+    {
+      "id": "devops-ea728026",
+      "category": "devops",
+      "category_label": "DevOps / 인프라",
+      "question": "Docker란 무엇이며, 개발 환경에서 어떻게 활용하는가?",
+      "answer": "Namespace + cgroup 기반 컨테이너 런타임. 이미지로 재현 가능한 환경 제공",
+      "distractors": [
+        "하드웨어를 가상화해 게스트 OS를 통째로 띄우는 하이퍼바이저",
+        "다중 서버에 컨테이너를 스케줄링·자동 복구하는 오케스트레이션 플랫폼",
+        "코드 의존성을 zip으로 묶어 서버에 업로드하는 패키지 매니저"
+      ],
+      "explanation": "컨테이너 런타임. Namespace + cgroup 기반 격리. 이미지를 통한 재현 가능한 환경.",
+      "followups": [
+        "컨테이너와 VM의 차이는?",
+        "Dockerfile 베스트 프랙티스는? (멀티 스테이지, 캐시 활용, 작은 베이스 이미지)",
+        "Docker volume과 bind mount의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/devops.md"
+    },
+    {
+      "id": "devops-8e276138",
+      "category": "devops",
+      "category_label": "DevOps / 인프라",
+      "question": "AWS IAM을 사용하는 이유는?",
+      "answer": "최소 권한 원칙으로 사용자·서비스별 권한을 분리하고 감사 가능하게 만들기 위해",
+      "distractors": [
+        "AWS 리소스 비용을 실시간으로 모니터링하고 자동 절감하기 위해",
+        "EC2 인스턴스 간 네트워크 트래픽을 라우팅하기 위해",
+        "데이터베이스 백업을 자동으로 S3에 저장하기 위해"
+      ],
+      "explanation": "최소 권한 원칙. 사용자·서비스 단위 권한 제어. 자격 증명 분리와 감사.",
+      "followups": [
+        "IAM Role과 User의 차이는?",
+        "임시 자격 증명(STS)이 안전한 이유는?",
+        "EC2에서 액세스 키 하드코딩 대신 무엇을 써야 하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/devops.md"
+    },
+    {
+      "id": "frontend-0e91d5ec",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Virtual DOM이란 무엇이며, React에서 어떻게 동작하나?",
+      "answer": "실제 DOM을 추상화한 JS 객체. diff로 변경점을 계산해 실제 DOM에 일괄(batch) 반영",
+      "distractors": [
+        "브라우저가 제공하는 또 다른 실제 DOM 트리로 두 트리를 동기화한다",
+        "Shadow DOM과 동일한 개념으로 컴포넌트 캡슐화에 사용된다",
+        "DOM 변경을 막아 모든 렌더링을 GPU로 위임하는 그래픽 최적화 기법"
+      ],
+      "explanation": "실제 DOM을 추상화한 자바스크립트 객체. Diff로 변경점 계산 후 batch update.",
+      "followups": [
+        "Virtual DOM이 항상 빠른가? (Svelte/Solid의 반론)",
+        "key prop이 중요한 이유는?",
+        "React Fiber는 무엇을 해결했나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-9bf0607c",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "CSR과 SSR의 차이점은 무엇인가?",
+      "answer": "CSR은 빈 HTML + JS 다운로드 후 클라이언트가 렌더, SSR은 서버에서 완성된 HTML 전송 — 초기 로딩·SEO·서버 부하의 트레이드오프",
+      "distractors": [
+        "CSR이 서버 렌더링이고 SSR이 클라이언트 렌더링이다 (정반대)",
+        "둘 다 동일한 흐름이며 차이는 JS 번들 크기 제한뿐",
+        "SSR은 SEO가 불가능하고 CSR이 SEO에 최적이다"
+      ],
+      "explanation": "CSR: 빈 HTML + JS 다운로드 후 렌더. SSR: 서버에서 완성된 HTML 전송. 초기 로딩·SEO·서버 부하의 트레이드오프.",
+      "followups": [
+        "Hydration이란?",
+        "SSG / ISR / RSC는 어떻게 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-15c8c16b",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Next.js에서 제공하는 렌더링 기법의 특징을 설명하시오.",
+      "answer": "SSG / SSR / ISR / CSR / RSC / Streaming — 각각 빌드·요청 시점·캐시 전략이 다름",
+      "distractors": [
+        "CSR 한 가지만 지원하며 다른 기법은 별도 플러그인으로 제공된다",
+        "SSR과 SSG는 동일한 결과를 만들며 차이가 없다",
+        "App Router에서는 클라이언트 컴포넌트가 기본이고 RSC는 사용할 수 없다"
+      ],
+      "explanation": "SSG / SSR / ISR / CSR / RSC / Streaming. 각각 빌드·요청 시점·캐시 전략이 다름.",
+      "followups": [
+        "App Router에서 RSC가 기본인 이유는?",
+        "\"use client\"와 \"use server\"의 차이는?",
+        "ISR의 revalidate는 어떻게 동작하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-588fc668",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "React에서 컴포넌트 설계 시 중요하게 고려할 점은?",
+      "answer": "단일 책임, 합성 우선, props 최소화, 상태 끌어올리기, 명확한 prop 인터페이스, 접근성, 재사용성",
+      "distractors": [
+        "가능한 한 많은 props를 받아 한 컴포넌트가 모든 시나리오를 처리하도록 설계",
+        "모든 상태를 가장 깊은 자식 컴포넌트로 내려 결합도를 높임",
+        "접근성과 시맨틱 마크업은 디자인 단계 이후의 부가 옵션이다"
+      ],
+      "explanation": "단일 책임, 합성 우선, props 최소화, 상태 끌어올리기, 명확한 prop 인터페이스, 접근성, 재사용성.",
+      "followups": [
+        "Container/Presentational 패턴은 여전히 유효한가?",
+        "Compound Component 패턴이란?",
+        "상태를 어디에 두는지 결정하는 기준은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-c7cdde69",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "낙관적 업데이트(Optimistic Update)에 관하여 설명하시오.",
+      "answer": "서버 응답을 기다리지 않고 UI를 먼저 갱신, 실패 시 롤백 — 사용자 경험을 향상시키는 전략",
+      "distractors": [
+        "서버 응답을 받은 뒤에만 UI를 갱신해 데이터 정합성을 최우선으로 두는 전략",
+        "모든 요청을 백그라운드 스레드로 옮겨 UI 스레드를 보호하는 방법",
+        "응답이 성공할 확률을 미리 예측해 요청을 자동 차단하는 기법"
+      ],
+      "explanation": "서버 응답을 기다리지 않고 UI를 먼저 갱신. 실패 시 롤백. 사용자 경험 향상.",
+      "followups": [
+        "React Query / SWR에서는 어떻게 구현하나?",
+        "어떤 상황에서 낙관적 업데이트를 피해야 하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-d4c7b4b8",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Webpack, Rollup 같은 번들러는 왜 필요한가?",
+      "answer": "모듈 의존성 해결, 단일/소수 파일로 결합, 코드 변환·압축·트리 셰이킹·코드 스플리팅을 자동화하기 위해",
+      "distractors": [
+        "브라우저가 ESM을 전혀 지원하지 않기 때문에 모든 환경에서 필수다",
+        "서버 사이드 렌더링을 위해서만 존재하며 클라이언트에서는 불필요",
+        "모듈을 분리하지 않고 한 파일에 모두 작성하기 위한 강제 도구"
+      ],
+      "explanation": "모듈 의존성 해결, 단일/소수 파일로 결합, 코드 변환·압축·트리 셰이킹·코드 스플리팅.",
+      "followups": [
+        "Webpack과 Rollup의 차이는?",
+        "ESM 네이티브 시대에 번들러는 여전히 필요한가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-14363fa9",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Webpack에 대해 설명하시오.",
+      "answer": "Entry → Module → Loader → Plugin → Output 파이프라인으로 의존성 그래프 기반 번들을 생성",
+      "distractors": [
+        "Babel과 동일한 트랜스파일러로 AST 변환만 수행하는 도구",
+        "브라우저에서 직접 실행되는 런타임 모듈 로더로 빌드 단계가 없다",
+        "CSS 전처리만 담당하며 JS 모듈은 다루지 않는다"
+      ],
+      "explanation": "Entry → Module → Loader → Plugin → Output. 의존성 그래프 기반 번들러.",
+      "followups": [
+        "Loader와 Plugin의 차이는?",
+        "트리 셰이킹이 동작하는 조건은?",
+        "HMR(Hot Module Replacement)은 어떻게 동작하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-13fc9bb7",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Babel에 대해 설명하시오.",
+      "answer": "JS 트랜스파일러 — 신문법을 구버전 호환 코드로 변환, AST 변환 기반",
+      "distractors": [
+        "모듈 의존성을 해결해 단일 파일로 결합하는 번들러",
+        "자바스크립트 코드의 정적 분석 + 린트 도구",
+        "코드를 보기 좋게 정렬하는 Opinionated 포매터"
+      ],
+      "explanation": "JS 트랜스파일러. 신문법 → 구버전 호환 코드. AST 변환 기반.",
+      "followups": [
+        "preset과 plugin의 차이는?",
+        "SWC와 비교했을 때의 차이는?",
+        "babel-polyfill과 core-js의 관계는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-c7f95709",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "ESLint에 대해 설명하시오.",
+      "answer": "JS/TS 정적 분석 도구 — 코드 스타일, 잠재적 버그, 관례 위반 등을 검출",
+      "distractors": [
+        "코드 포맷팅 전용 도구로 의미 변경 없이 들여쓰기만 정리한다",
+        "JS 신문법을 구버전으로 변환하는 트랜스파일러",
+        "의존성 그래프를 분석해 단일 번들을 생성하는 빌드 도구"
+      ],
+      "explanation": "JS/TS 정적 분석 도구. 코드 스타일·잠재적 버그·관례 위반 검출.",
+      "followups": [
+        "ESLint와 Prettier는 어떻게 역할이 다른가?",
+        "flat config로 바뀐 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "frontend-f9a58d39",
+      "category": "frontend",
+      "category_label": "프론트엔드",
+      "question": "Prettier에 대해 설명하시오.",
+      "answer": "Opinionated 코드 포매터 — 스타일 논쟁을 제거하고 일관된 포맷을 자동 적용",
+      "distractors": [
+        "잠재적 버그와 관례 위반을 검출하는 정적 분석 도구",
+        "신문법을 구버전 JS로 변환하는 트랜스파일러",
+        "모듈을 결합해 단일 파일로 만드는 번들러"
+      ],
+      "explanation": "Opinionated 코드 포매터. 스타일 논쟁 제거, 일관된 포맷 자동 적용.",
+      "followups": [
+        "ESLint의 stylistic rule과 어떻게 분리해야 하나?",
+        "\"Opinionated\"의 의미는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/frontend.md"
+    },
+    {
+      "id": "language-js-77edde8d",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "함수 선언문과 함수 표현식의 차이를 설명하시오.",
+      "answer": "선언문은 호이스팅 시 함수 전체가 끌어올려지고, 표현식은 변수 호이스팅만 되어 본체는 할당 시점에 생긴다",
+      "distractors": [
+        "둘 다 호이스팅 동작이 동일하며 차이는 문법뿐이다",
+        "표현식은 호이스팅으로 본체까지 끌어올려지고 선언문은 그렇지 않다 (정반대)",
+        "선언문은 화살표 문법으로만 작성할 수 있다"
+      ],
+      "explanation": "선언문: 호이스팅 시 함수 전체가 끌어올려짐. 표현식: 변수 호이스팅만, 함수 본체는 할당 시점.",
+      "followups": [
+        "화살표 함수도 함수 표현식인가?",
+        "함수 선언문의 호이스팅이 코드 가독성에 미치는 영향은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-9832030a",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "클로저(Closure)에 대해 설명하시오.",
+      "answer": "함수가 선언된 렉시컬 환경(스코프)을 기억하여 외부 함수 실행 종료 후에도 그 변수에 접근 가능한 함수",
+      "distractors": [
+        "호출 시점의 동적 스코프를 캡처하여 호출자 변수에 접근하는 함수",
+        "함수 내부 상태를 외부에 노출하지 않는 OOP의 캡슐화와 동의어",
+        "비동기 콜백에만 적용되는 특수한 함수 타입"
+      ],
+      "explanation": "함수가 선언된 렉시컬 환경을 기억하여, 외부 함수 실행 종료 후에도 변수에 접근 가능.",
+      "followups": [
+        "클로저가 메모리 누수를 유발할 수 있는가?",
+        "모듈 패턴은 클로저의 어떤 성질을 이용하나?",
+        "React Hook의 stale closure 문제는 무엇인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-7dd593f5",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "실행 컨텍스트에 대해 설명하시오.",
+      "answer": "코드 실행에 필요한 환경 정보 — Lexical Environment + Variable Environment + this binding",
+      "distractors": [
+        "함수 호출 시 인자 값만 묶어 둔 단순한 인자 객체",
+        "JS 엔진이 V8/SpiderMonkey 등으로 분기되는 런타임 식별자",
+        "try/catch 블록 내부에만 존재하는 예외 처리 컨텍스트"
+      ],
+      "explanation": "코드 실행에 필요한 환경 정보. Lexical Environment + Variable Environment + this binding.",
+      "followups": [
+        "실행 컨텍스트 스택과 콜 스택의 관계는?",
+        "this 바인딩이 결정되는 4가지 규칙은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-d1149519",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "자바스크립트가 동적 언어인 이유는?",
+      "answer": "런타임에 타입이 결정되고 변수 타입 변경, 객체 속성의 동적 추가·삭제, 동적 디스패치가 가능하기 때문",
+      "distractors": [
+        "컴파일러가 타입을 모두 정적으로 결정한 뒤 실행하기 때문",
+        "다른 언어와 달리 클래스를 일절 지원하지 않기 때문",
+        "모든 변수에 명시적인 타입 어노테이션이 필요하기 때문"
+      ],
+      "explanation": "런타임 타입 결정, 변수 타입 변경 가능, 객체 속성 동적 추가/삭제, 동적 디스패치.",
+      "followups": [
+        "TypeScript가 해결하는 동적 언어의 단점은?",
+        "JIT 컴파일러가 동적 언어 성능을 어떻게 보완하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-9875fad6",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "자바스크립트 제너레이터에 대해 설명하시오.",
+      "answer": "function*와 yield로 작성하며 실행을 중단/재개할 수 있는 함수 — Iterator 프로토콜을 구현",
+      "distractors": [
+        "async/await의 다른 이름으로 실질 동작이 동일하다",
+        "클래스 생성자(constructor)의 ES2017 이후 별칭",
+        "모듈을 동적으로 import하기 위한 표준 함수"
+      ],
+      "explanation": "function* 와 yield. 실행을 중단/재개할 수 있는 함수. Iterator 프로토콜 구현.",
+      "followups": [
+        "async/await는 제너레이터로 어떻게 구현 가능한가?",
+        "Redux-Saga는 제너레이터를 어떻게 활용하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-13c5999c",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "async / await에 대해 설명하시오.",
+      "answer": "Promise 위에 얹은 문법 설탕 — 비동기 코드를 동기처럼 쓰게 하며 await는 Promise 해결을 대기",
+      "distractors": [
+        "별도의 OS 스레드를 띄워 진짜 병렬 실행을 보장하는 키워드",
+        "이벤트 루프를 완전히 정지시키고 동기 I/O를 강제로 수행하는 메커니즘",
+        "Promise와 무관한 새로운 비동기 모델로 Promise를 대체한다"
+      ],
+      "explanation": "Promise 위 문법 설탕. 비동기 코드를 동기처럼. await는 Promise 해결 대기.",
+      "followups": [
+        "async 함수의 반환값은 항상 무엇인가?",
+        "여러 await를 병렬화하는 방법은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-88a1df41",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "콜 스택과 힙에 대해 설명하시오.",
+      "answer": "콜 스택은 함수 실행 컨텍스트를 LIFO로 쌓으며 원시값을 보관, 힙은 객체·참조 타입을 위한 동적 메모리",
+      "distractors": [
+        "콜 스택이 힙보다 메모리 용량이 크고 객체 저장에 쓰인다 (정반대)",
+        "둘 다 동일한 메모리 영역이며 명칭만 다르다",
+        "콜 스택은 가비지 컬렉션 대상이고 힙은 수동 해제만 가능하다"
+      ],
+      "explanation": "콜 스택: 함수 실행 컨텍스트 LIFO 저장(원시값). 힙: 객체·참조 타입의 동적 메모리.",
+      "followups": [
+        "스택 오버플로우는 어떤 상황에서 발생하나?",
+        "가비지 컬렉션은 힙에 어떻게 동작하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-ac88cfa5",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "이벤트 루프에 대해 설명하시오.",
+      "answer": "콜 스택 + 태스크 큐 + 마이크로태스크 큐로 구성 — 스택이 비면 큐에서 작업을 꺼내 실행",
+      "distractors": [
+        "모든 비동기 작업을 OS 스레드 풀에서 처리하는 멀티스레드 스케줄러",
+        "setInterval만 처리하는 단일 타이머 큐",
+        "Promise를 동기적으로 변환해 콜 스택에 직접 쌓는 메커니즘"
+      ],
+      "explanation": "콜 스택 + 태스크 큐 + 마이크로태스크 큐. 스택이 비면 큐에서 작업을 꺼내 실행.",
+      "followups": [
+        "마이크로태스크와 매크로태스크의 우선순위는?",
+        "setTimeout(fn, 0)이 즉시 실행되지 않는 이유는?",
+        "Node.js의 이벤트 루프와 브라우저는 어떻게 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-46f99296",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "JSON에 대해 설명하시오.",
+      "answer": "JavaScript Object Notation — 텍스트 기반의 언어 독립적 데이터 교환 포맷",
+      "distractors": [
+        "JS에서만 사용 가능한 바이너리 직렬화 포맷",
+        "XML의 별칭으로 두 명칭이 동의어다",
+        "함수·undefined·순환 참조까지 모두 표현 가능한 만능 포맷"
+      ],
+      "explanation": "JavaScript Object Notation. 텍스트 기반 데이터 교환 포맷. 언어 독립적.",
+      "followups": [
+        "JSON.stringify의 두 번째/세 번째 인자는?",
+        "JSON이 표현할 수 없는 JS 값은? (undefined, function, Symbol, 순환 참조)"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-c7a73704",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "자바스크립트 label에 대해 설명하시오.",
+      "answer": "반복문에 이름을 붙여 break/continue로 특정 루프를 제어하는 문법 — 중첩 루프 탈출에 유용",
+      "distractors": [
+        "변수에 별명을 부여해 동일 메모리 위치를 공유하게 만드는 alias 선언",
+        "함수에 메타데이터를 다는 데코레이터의 다른 이름",
+        "try/catch 블록을 미리 명시해 두는 예외 처리 표시자"
+      ],
+      "explanation": "반복문에 이름을 붙여 break/continue로 특정 루프 제어. 중첩 루프 탈출에 유용.",
+      "followups": [
+        "label 사용이 권장되지 않는 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-6dbc5b53",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "Ajax에 대해 설명하시오.",
+      "answer": "Asynchronous JavaScript and XML — 비동기 HTTP 요청으로 페이지 갱신 없이 데이터를 교환하는 기법",
+      "distractors": [
+        "페이지를 통째로 새로고침하며 폼 제출 결과를 받는 동기 요청 방식",
+        "XML 파일을 빌드 시점에 정적으로 포함하는 템플릿 기법",
+        "WebSocket 연결을 맺기 위한 핸드셰이크 절차의 다른 이름"
+      ],
+      "explanation": "Asynchronous JavaScript and XML. 비동기 HTTP 요청으로 페이지 갱신 없이 데이터 교환.",
+      "followups": [
+        "XMLHttpRequest와 fetch의 차이는?",
+        "fetch는 왜 4xx/5xx에서 reject되지 않는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-7d97a8e5",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "undefined와 null의 차이점은?",
+      "answer": "undefined는 변수 선언 후 미할당 상태 / 의도 없음, null은 의도적인 \"값 없음\" 할당",
+      "distractors": [
+        "둘 다 동일한 값이며 ===로 비교해도 true다",
+        "null은 변수 선언만 하고 미할당 상태, undefined는 명시적 비어있음이다 (정반대)",
+        "undefined는 JS, null은 TS에서만 존재한다"
+      ],
+      "explanation": "undefined: 변수 선언 후 미할당 / 의도 없음. null: 의도적인 \"값 없음\" 할당.",
+      "followups": [
+        "typeof null이 \"object\"인 이유는?",
+        "== 와 === 비교에서 둘은 어떻게 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-7b5cafea",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "자바스크립트 Promise에 대해 설명하시오.",
+      "answer": "비동기 작업의 최종 결과를 나타내는 객체 — 상태는 Pending → Fulfilled / Rejected",
+      "distractors": [
+        "동기 코드의 반환값을 미리 캐싱해 두는 메모이제이션 객체",
+        "async 함수만 만들 수 있는 내부 빌트인 타입으로 직접 생성할 수 없다",
+        "콜백 함수를 동기적으로 즉시 실행하는 단순 래퍼"
+      ],
+      "explanation": "비동기 작업의 최종 결과를 나타내는 객체. Pending → Fulfilled / Rejected.",
+      "followups": [
+        "Promise 체이닝 중 에러는 어떻게 전파되나?",
+        "콜백 지옥과 Promise는 어떻게 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-90c4915c",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "Promise.all과 Promise.race의 차이를 설명하시오.",
+      "answer": "all은 모두 성공 시 결과 배열을 반환하고 하나라도 실패하면 reject, race는 가장 먼저 settled되는 결과를 반환",
+      "distractors": [
+        "all은 가장 먼저 끝난 결과 1개만 반환, race는 모든 결과를 배열로 반환한다 (정반대)",
+        "둘 다 동일한 동작이며 명칭만 다르다",
+        "race는 모든 Promise가 실패해야만 결과를 반환한다"
+      ],
+      "explanation": "all: 모두 성공 시 결과 배열, 하나라도 실패 시 reject. race: 가장 먼저 settled되는 결과.",
+      "followups": [
+        "Promise.allSettled / Promise.any는 무엇이 다른가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-faab947c",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "== 와 === 의 차이를 설명하시오.",
+      "answer": "==은 타입 강제 변환 후 비교, ===은 타입까지 일치해야 true를 반환",
+      "distractors": [
+        "==이 엄격 비교이고 ===이 느슨 비교다 (정반대)",
+        "둘 다 동일하며 ESLint 권장 차원에서 ===만 쓴다",
+        "==은 원시값 전용, ===은 객체 전용 비교 연산자다"
+      ],
+      "explanation": "==: 타입 강제 변환 후 비교. ===: 타입까지 일치해야 true.",
+      "followups": [
+        "null == undefined 가 true인 이유는?",
+        "NaN === NaN 이 false인 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-js-202a372f",
+      "category": "language-js",
+      "category_label": "JavaScript",
+      "question": "디바운스와 쓰로틀의 차이를 설명하시오.",
+      "answer": "디바운스는 마지막 호출 후 일정 시간이 지나야 한 번 실행, 쓰로틀은 일정 주기마다 최대 1번 실행",
+      "distractors": [
+        "디바운스가 일정 주기 실행이고 쓰로틀이 마지막 호출 후 실행이다 (정반대)",
+        "둘 다 동일한 동작이며 라이브러리마다 명칭이 다를 뿐이다",
+        "디바운스는 동기 함수에만, 쓰로틀은 비동기 함수에만 적용할 수 있다"
+      ],
+      "explanation": "Debounce: 마지막 호출 후 일정 시간 뒤 1번 실행. Throttle: 일정 주기로 최대 1번 실행.",
+      "followups": [
+        "검색창 자동완성에는 어느 쪽이 적합한가?",
+        "무한 스크롤에는 어느 쪽이 적합한가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-js.md"
+    },
+    {
+      "id": "language-ts-e7efc9a7",
+      "category": "language-ts",
+      "category_label": "TypeScript",
+      "question": "TypeScript 제네릭에 대해 설명하시오.",
+      "answer": "타입을 파라미터화하여 호출 시점에 타입이 결정되는, 재사용 가능한 컴포넌트/함수 작성 기법",
+      "distractors": [
+        "any로 선언된 변수에 자동으로 런타임 타입 검사가 들어가는 기능",
+        "타입을 명시하지 않고 컴파일러가 변수 사용 패턴을 추론하는 타입 인퍼런스",
+        "클래스 상속을 통한 다형성으로, OOP의 상속 메커니즘과 동일한 개념"
+      ],
+      "explanation": "타입을 파라미터화하여 재사용 가능한 컴포넌트/함수 작성. 호출 시점에 타입 결정.",
+      "followups": [
+        "extends 제약(constraint)은 어떻게 쓰나?",
+        "조건부 타입(conditional type)과 infer는?",
+        "제네릭 vs any vs unknown의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-ts.md"
+    },
+    {
+      "id": "language-ts-fd1a88ba",
+      "category": "language-ts",
+      "category_label": "TypeScript",
+      "question": "enum과 object의 차이를 설명하시오.",
+      "answer": "enum은 양방향 매핑 코드를 생성해 번들이 커지고, `const object + as const`는 트리 셰이킹과 타입 안전성을 함께 얻음",
+      "distractors": [
+        "enum은 런타임에 사라지고 object는 코드로 남는다 (정반대)",
+        "둘 다 컴파일 결과가 동일해서 어느 쪽을 써도 차이가 없다",
+        "enum은 문자열만, object는 숫자만 키로 사용할 수 있다"
+      ],
+      "explanation": "enum: 컴파일 결과 코드 증가, 양방향 매핑. const object + as const: 트리 셰이킹 가능, 타입 안전성 유지.",
+      "followups": [
+        "`const enum`은 어떻게 다른가?",
+        "왜 일부 팀은 enum 사용을 금지하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-ts.md"
+    },
+    {
+      "id": "language-ts-1589caff",
+      "category": "language-ts",
+      "category_label": "TypeScript",
+      "question": "Type이나 Interface 선언이 많아지면 성능 처리를 어떻게 하는가?",
+      "answer": "런타임 비용은 0이고 컴파일 시간이 문제 — `incremental`, `skipLibCheck`, project references, 복잡한 조건부 타입 단순화로 대응",
+      "distractors": [
+        "타입은 런타임에 메모리를 차지하므로 적게 선언해야 한다",
+        "tsc는 자동 최적화가 없어 사용자가 직접 dead-type elimination을 수행해야 한다",
+        "type 키워드 대신 모두 class로 바꾸면 컴파일 시간이 줄어든다"
+      ],
+      "explanation": "타입은 런타임에 제거됨(zero runtime cost). 성능 이슈는 주로 컴파일 시간 — `incremental`, `skipLibCheck`, project references, 복잡한 조건부 타입 단순화.",
+      "followups": [
+        "type vs interface는 컴파일 성능에서 차이가 있는가?",
+        "tsc --diagnostics로 무엇을 볼 수 있나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-ts.md"
+    },
+    {
+      "id": "language-ts-111365c7",
+      "category": "language-ts",
+      "category_label": "TypeScript",
+      "question": "TypeScript에서 모듈을 설명하시오.",
+      "answer": "ESM 기반 import/export로 파일 단위 캡슐화 — namespace, module declaration, ambient module 형태도 존재",
+      "distractors": [
+        "모든 모듈이 단일 글로벌 스코프에 합쳐져 평탄화되어 컴파일된다",
+        "TypeScript에는 모듈 시스템이 없고 CommonJS만 사용 가능하다",
+        "모듈은 컴파일 시 제거되고 런타임에는 전부 인라인 코드로 변환된다"
+      ],
+      "explanation": "ESM 기반 import/export. 파일 단위 캡슐화. namespace, module declaration, ambient module.",
+      "followups": [
+        "ESM과 CJS의 상호 운용성 문제는?",
+        "tsconfig의 module / moduleResolution 옵션은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/language-ts.md"
+    },
+    {
+      "id": "mobile-e40e3651",
+      "category": "mobile",
+      "category_label": "모바일",
+      "question": "웹뷰란 무엇인가?",
+      "answer": "네이티브 앱 내부에 임베드된 브라우저 컴포넌트 (WKWebView, Android WebView)",
+      "distractors": [
+        "웹 페이지에서 모바일 카메라/GPS 등 네이티브 API를 호출하는 표준 인터페이스",
+        "시스템 브라우저를 별도 창으로 띄우는 SafariViewController/Custom Tabs",
+        "모바일 앱을 PWA로 변환하는 빌드 도구"
+      ],
+      "explanation": "네이티브 앱 내부에 임베드된 브라우저 컴포넌트. iOS WKWebView, Android WebView. 하이브리드 앱의 핵심.",
+      "followups": [
+        "네이티브 ↔ 웹 통신은 어떻게 하나? (JS Bridge)",
+        "SFSafariViewController / Chrome Custom Tabs와 WebView의 차이는?",
+        "웹뷰 보안 이슈는 어떤 것이 있나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/mobile.md"
+    },
+    {
+      "id": "network-1f517a64",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "URL과 URI에 대해 설명하시오.",
+      "answer": "URI = URL ∪ URN — URL은 위치, URN은 이름을 의미하며 모든 URL은 URI에 포함된다",
+      "distractors": [
+        "URL이 상위 개념이고 URI가 그 하위 형태 (정반대)",
+        "URL과 URI는 동의어로 RFC가 두 명칭을 혼용한 결과 우연히 함께 존재한다",
+        "URN은 IP 주소만 표현 가능한 별개의 식별 체계로 URI와 무관하다"
+      ],
+      "explanation": "URI = URL ∪ URN. URL은 위치, URN은 이름. 모든 URL은 URI.",
+      "followups": [
+        "URN의 실제 예시는?",
+        "URL 인코딩이 필요한 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-d3954c9f",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "TCP와 UDP에 대해 설명하시오.",
+      "answer": "TCP는 연결지향·신뢰성·순서 보장, UDP는 비연결·빠름·손실 허용",
+      "distractors": [
+        "TCP는 비연결이고 UDP가 연결지향이다 (정반대)",
+        "둘 다 동일한 연결 절차를 거치며 차이는 포트 번호 범위뿐이다",
+        "TCP는 응용 계층, UDP는 전송 계층 프로토콜로 서로 다른 OSI 레이어다"
+      ],
+      "explanation": "TCP: 연결지향·신뢰성·순서 보장. UDP: 비연결·빠름·손실 허용.",
+      "followups": [
+        "HTTP/3가 UDP 기반인 이유는?",
+        "TCP 혼잡 제어 알고리즘은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-d38b8a3e",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "TCP 3-way handshake에 대해 설명하시오.",
+      "answer": "SYN → SYN-ACK → ACK 순서로 시퀀스 번호를 동기화하며 연결을 수립",
+      "distractors": [
+        "SYN → ACK 두 번으로 끝나는 2-way handshake가 표준이다",
+        "데이터 페이로드 첫 패킷에 ACK 비트만 세팅하면 즉시 연결이 성립한다",
+        "클라이언트가 RST를 보내 연결을 강제로 시작하는 절차다"
+      ],
+      "explanation": "SYN → SYN-ACK → ACK. 시퀀스 번호 동기화와 연결 수립.",
+      "followups": [
+        "4-way handshake(종료)는 왜 4단계인가?",
+        "TIME_WAIT 상태는 왜 존재하는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-869aaa71",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "HTTP의 주요 특성 2가지를 말하고 설명하시오.",
+      "answer": "Stateless(상태 없음) + Connectionless(원래 매 요청마다 연결 종료) — 확장성 ↑, 상태는 쿠키/세션/토큰으로 보완",
+      "distractors": [
+        "Stateful + Connection-oriented — 서버가 항상 클라이언트 상태를 메모리에 보관",
+        "양방향 풀 듀플렉스 + 바이너리 프레임 — 기본적으로 WebSocket과 동일",
+        "멀티캐스트 + 신뢰성 없음 — UDP 위에서 직접 동작"
+      ],
+      "explanation": "Stateless + Connectionless(원래). 확장성 ↑, 그러나 상태 유지 필요시 쿠키/세션/토큰.",
+      "followups": [
+        "HTTP/1.1의 Keep-Alive는 어떤 특성을 보완하나?",
+        "HTTP/2와 HTTP/3의 핵심 개선점은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-4b7846a8",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "웹소켓과 HTTP의 차이점을 설명하시오.",
+      "answer": "HTTP는 요청-응답 단방향, WebSocket은 양방향 풀 듀플렉스이며 초기 핸드셰이크만 HTTP Upgrade를 사용",
+      "distractors": [
+        "WebSocket은 단방향 푸시 전용으로 클라이언트가 서버로 보낼 수 없다",
+        "둘 다 매 메시지마다 새 TCP 연결을 맺는다",
+        "WebSocket은 UDP 기반이고 HTTP는 TCP 기반이라 다르다"
+      ],
+      "explanation": "HTTP는 요청-응답 단방향. WebSocket은 양방향 풀 듀플렉스. 초기 핸드셰이크는 HTTP Upgrade.",
+      "followups": [
+        "SSE(Server-Sent Events)와의 차이는?",
+        "폴링·롱폴링과의 비교는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-c6083aa0",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "NAT(Network Address Translation)에 대해 설명하시오.",
+      "answer": "사설 IP와 공인 IP 사이의 주소 변환 — IPv4 주소 부족 완화 + 내부 망 은닉 효과",
+      "distractors": [
+        "DNS가 도메인을 IP로 바꾸는 작업과 정확히 동일한 메커니즘",
+        "MAC 주소를 IP 주소로 변환하는 ARP 프로토콜의 별칭",
+        "IPv6 환경에서 라우팅 효율을 높이기 위해 도입된 새로운 표준"
+      ],
+      "explanation": "사설 IP ↔ 공인 IP 변환. IPv4 주소 부족 완화 + 내부 망 은닉.",
+      "followups": [
+        "포트 포워딩(PAT)이란?",
+        "NAT 환경에서 P2P 연결이 어려운 이유는? (NAT 트래버설)"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-01dd07c7",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "OSI 7계층에 대해 설명하시오.",
+      "answer": "물리·데이터링크·네트워크·전송·세션·표현·응용 계층으로 통신 기능을 분리한 추상 모델",
+      "distractors": [
+        "응용·표현·세션·데이터링크·전송·네트워크·물리 (순서 뒤섞임)",
+        "TCP/IP 4계층과 동일하며 단순히 명칭만 다르다",
+        "실제 패킷이 7개 계층을 모두 별도 헤더로 감싸 전송되는 물리적 캡슐화 구조"
+      ],
+      "explanation": "물리·데이터링크·네트워크·전송·세션·표현·응용. 각 계층의 역할과 대표 프로토콜.",
+      "followups": [
+        "TCP/IP 4계층 모델과의 차이는?",
+        "L4 vs L7 로드 밸런서의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-7baa1e3f",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "DNS는 무엇인가?",
+      "answer": "도메인 ↔ IP 매핑을 제공하는 계층적 분산 시스템 — 재귀/반복 질의와 캐시 계층을 사용",
+      "distractors": [
+        "도메인 소유권을 등록하는 중앙 집중식 데이터베이스로 분산 구조가 아니다",
+        "HTTPS 인증서 발급용 프로토콜로 ACME와 동의어다",
+        "클라이언트가 직접 루트 IP를 알아내야 동작하는 P2P 디렉터리 서비스"
+      ],
+      "explanation": "도메인 ↔ IP 매핑. 계층적 분산 시스템. 재귀/반복 질의, 캐시 계층.",
+      "followups": [
+        "A / AAAA / CNAME / MX / TXT 레코드의 차이는?",
+        "DNS 캐시 포이즈닝이란?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-cb135310",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "CDN이란 무엇인가?",
+      "answer": "전 세계 엣지 서버에 콘텐츠를 캐싱해 지연을 줄이고 원본 서버 부하를 분산하는 네트워크",
+      "distractors": [
+        "동적 데이터를 실시간으로 동기화하는 글로벌 데이터베이스 복제 시스템",
+        "사용자 기기에 코드 패치를 배포하는 자동 업데이트 채널",
+        "DDoS 공격을 막기 위해 모든 트래픽을 단일 게이트웨이로 모으는 방화벽"
+      ],
+      "explanation": "전 세계 엣지 서버에 콘텐츠 캐싱. 지연 단축 + 원본 서버 부하 분산.",
+      "followups": [
+        "Cache Hit / Miss 시의 흐름은?",
+        "Origin Shielding이란?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
+    {
+      "id": "network-db9928dc",
+      "category": "network",
+      "category_label": "네트워크",
+      "question": "리버스 프록시와 포워드 프록시의 차이점을 설명하시오.",
+      "answer": "포워드 프록시는 클라이언트 측에서 요청을 대리하고, 리버스 프록시는 서버 앞단에서 요청을 받아 분배",
+      "distractors": [
+        "둘 다 동일한 동작이며 명칭만 다르다",
+        "리버스 프록시는 응답만 캐싱하고 포워드 프록시는 요청만 캐싱한다",
+        "포워드는 HTTPS, 리버스는 HTTP에서만 동작한다"
+      ],
+      "explanation": "포워드: 클라이언트 측에서 대신 요청. 리버스: 서버 앞단에서 받아 분배.",
+      "followups": [
+        "Nginx를 리버스 프록시로 쓸 때의 장점은?",
+        "API Gateway는 리버스 프록시의 일종인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/network.md"
+    },
     {
       "id": "operating-system-2562f0da",
       "category": "operating-system",
@@ -23,6 +1315,63 @@
       "followups": [
         "스레드 간 통신과 프로세스 간 통신의 차이는?",
         "멀티스레드 환경의 디버깅이 어려운 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-5b8245d8",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "멀티 프로세스와 멀티 스레드를 비교하시오.",
+      "answer": "자원 격리/생성 비용, 동기화 난이도, 안정성, 적합 워크로드에서 차이 — 격리는 멀티프로세스, 효율은 멀티스레드",
+      "distractors": [
+        "멀티 스레드가 항상 더 안전하며 멀티 프로세스는 사용을 피해야 한다",
+        "둘 다 동일하며 OS는 내부적으로 한 가지 모델만 사용한다",
+        "멀티 프로세스는 메모리를 공유하고 멀티 스레드는 메모리가 격리된다 (정반대)"
+      ],
+      "explanation": "자원 격리/비용, 동기화 난이도, 안정성, 적합한 워크로드.",
+      "followups": [
+        "Chrome이 탭마다 프로세스를 분리하는 이유는?",
+        "Node.js의 cluster는 멀티프로세스인가 멀티스레드인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-8c50f625",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "프로세스 동기화 문제와 뮤텍스·세마포어의 차이를 설명하시오.",
+      "answer": "경쟁 조건 → 임계 구역 보호. Mutex는 소유 개념의 이진 락, Semaphore는 카운팅 신호",
+      "distractors": [
+        "Mutex가 카운팅 신호이고 Semaphore가 소유 개념의 이진 락이다 (정반대)",
+        "둘 다 동일한 동작이며 명칭만 다르다",
+        "Mutex와 Semaphore는 동기화가 아니라 메모리 할당용 객체다"
+      ],
+      "explanation": "경쟁 조건 → 임계 구역 보호. Mutex: 소유 개념의 이진 락. Semaphore: 카운팅 신호.",
+      "followups": [
+        "데드락의 4가지 필요 조건은?",
+        "이진 세마포어와 뮤텍스의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-528a373a",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "뮤텍스 락에 대해 간략하게 설명하시오.",
+      "answer": "상호 배제(Mutual Exclusion) — 락을 획득한 스레드만 해제 가능한 소유권 개념의 이진 락",
+      "distractors": [
+        "여러 스레드가 동시에 락을 획득할 수 있는 카운팅 기반 동기화 객체",
+        "어떤 스레드도 해제할 수 있는 단순 플래그 변수",
+        "CPU 코어 간 캐시 일관성을 보장하기 위한 하드웨어 회로"
+      ],
+      "explanation": "상호 배제. 락을 획득한 스레드만 해제 가능. 소유권 개념.",
+      "followups": [
+        "스핀락과의 차이는?",
+        "재귀적 뮤텍스(reentrant)란?"
       ],
       "related": [],
       "source": "99-interview-questions/by-category/operating-system.md"
@@ -44,6 +1393,402 @@
       ],
       "related": [],
       "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-22a4faa2",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "인터럽트에 대해 설명하시오.",
+      "answer": "CPU에 외부/내부 이벤트를 비동기로 통지 — 폴링과 대비, ISR 실행 후 컨텍스트 복귀",
+      "distractors": [
+        "CPU가 주기적으로 이벤트를 검사하는 폴링과 동일한 동작",
+        "명령어 실행 중 데이터 의존성을 해소하기 위한 파이프라인 스톨",
+        "메모리 페이지 부재 시에만 발생하는 페이지 폴트 전용 메커니즘"
+      ],
+      "explanation": "CPU에 외부/내부 이벤트를 비동기 통지. 폴링과 대비. ISR이 실행되고 컨텍스트 복귀.",
+      "followups": [
+        "하드웨어 인터럽트와 소프트웨어 인터럽트의 차이는?",
+        "인터럽트와 트랩(예외)의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-9acd6d0c",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "최초적합, 최악적합, 최적적합에 대해 설명하시오.",
+      "answer": "가변 분할 메모리 할당 전략 — First/Worst/Best Fit, 단편화 양상이 다름",
+      "distractors": [
+        "CPU 스케줄링 알고리즘의 3가지 종류",
+        "디스크 입출력 최적화를 위한 파일 시스템 배치 알고리즘",
+        "페이지 교체 알고리즘의 변형으로 LRU의 하위 분류"
+      ],
+      "explanation": "가변 분할 메모리 할당 전략. First/Worst/Best Fit. 단편화 양상의 차이.",
+      "followups": [
+        "어떤 전략이 외부 단편화에 가장 취약한가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-d4a5db64",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "외부 단편화에 대해 설명하시오.",
+      "answer": "가용 메모리 총량은 충분하지만 연속된 블록이 없어 할당이 실패하는 현상",
+      "distractors": [
+        "한 할당 블록 내부에 사용되지 않는 공간이 남는 현상 (내부 단편화)",
+        "페이지 테이블이 너무 커져 TLB 미스가 잦아지는 문제",
+        "디스크 헤드 이동 거리가 길어 I/O가 느려지는 디스크 단편화"
+      ],
+      "explanation": "가용 메모리 총량은 충분하지만, 연속된 블록이 없어서 할당 실패하는 현상.",
+      "followups": [
+        "내부 단편화와의 차이는?",
+        "페이징은 어떤 단편화를 해결하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-ecba9c3d",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "프로세스 제어 블록(PCB)에 대해 설명하시오.",
+      "answer": "프로세스 상태, PC, 레지스터, 메모리 정보, 스케줄링 정보를 담는 OS 자료구조",
+      "distractors": [
+        "페이지 테이블의 항목으로, 가상 주소를 물리 주소로 매핑한다",
+        "CPU 캐시 라인의 상태를 관리하는 MESI 프로토콜 구조체",
+        "사용자 프로세스가 직접 수정 가능한 표준 IPC 메시지 큐"
+      ],
+      "explanation": "프로세스 상태/PC/레지스터/메모리 정보/스케줄링 정보를 담는 OS 자료구조.",
+      "followups": [
+        "컨텍스트 스위칭 시 PCB는 어디에 저장되는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-39ff3c12",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "RAID 구성 방식에 대해 설명하시오.",
+      "answer": "RAID 0/1/5/6/10 — 성능, 내결함성, 용량 효율 사이의 트레이드오프",
+      "distractors": [
+        "RAID는 자동 백업 기능이 포함된 시스템이라 별도 백업이 불필요",
+        "RAID 0이 가장 안전하고 RAID 1이 가장 빠르다 (정반대)",
+        "RAID 레벨은 디스크 개수와 무관하게 어떤 구성이든 적용 가능하다"
+      ],
+      "explanation": "RAID 0/1/5/6/10. 성능/내결함성/용량 효율의 트레이드오프.",
+      "followups": [
+        "RAID 5의 단점은? RAID 6이 보완하는 점은?",
+        "RAID와 백업은 같은 것인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "operating-system-b133769d",
+      "category": "operating-system",
+      "category_label": "운영체제",
+      "question": "스레드, 프로세스, 코어의 수는 많을수록 좋은가?",
+      "answer": "아니다 — 컨텍스트 스위칭 비용, 동기화 오버헤드, Amdahl's Law 때문이며 워크로드 특성에 따라 결정",
+      "distractors": [
+        "항상 더 많을수록 선형으로 성능이 향상된다",
+        "코어 수만 늘리면 동기화 오버헤드와 무관하게 처리량이 비례 증가한다",
+        "CPU 바운드든 I/O 바운드든 동일한 수의 스레드가 최적이다"
+      ],
+      "explanation": "NO. 컨텍스트 스위칭 비용, 동기화 오버헤드, Amdahl's Law. 워크로드 종속.",
+      "followups": [
+        "CPU 바운드 vs I/O 바운드 워크로드에 적절한 스레드 수는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/operating-system.md"
+    },
+    {
+      "id": "software-engineering-7da89efe",
+      "category": "software-engineering",
+      "category_label": "SW 공학",
+      "question": "객체지향 프로그래밍(OOP)에 대해 설명하시오.",
+      "answer": "캡슐화·상속·다형성·추상화를 기반으로 데이터와 행위를 객체로 묶어 모델링하는 패러다임",
+      "distractors": [
+        "모든 상태를 불변으로 두고 순수 함수의 합성으로 프로그램을 구성하는 패러다임",
+        "데이터와 함수를 명확히 분리하고 절차적 호출 흐름으로 작성하는 방식",
+        "이벤트 발생 시점에만 코드가 실행되는 콜백 중심 프로그래밍 모델"
+      ],
+      "explanation": "캡슐화·상속·다형성·추상화. 데이터와 행위를 객체로 묶어 모델링.",
+      "followups": [
+        "OOP와 함수형 패러다임의 차이는?",
+        "SOLID 원칙 각각을 한 줄로 설명할 수 있나?",
+        "\"상속보다 합성\"이라는 원칙의 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/software-engineering.md"
+    },
+    {
+      "id": "software-engineering-bfc376ba",
+      "category": "software-engineering",
+      "category_label": "SW 공학",
+      "question": "단위 테스트와 통합 테스트의 차이점은 무엇인가?",
+      "answer": "단위는 작은 단위(함수/클래스)를 격리해서 검증, 통합은 여러 컴포넌트의 상호작용을 검증",
+      "distractors": [
+        "단위는 개발자가 작성하고 통합은 QA만 작성한다는 책임 주체의 차이",
+        "단위는 자동화 가능하고 통합은 반드시 수동으로 수행해야 한다",
+        "단위는 프로덕션에서, 통합은 스테이징에서만 실행하는 환경적 구분"
+      ],
+      "explanation": "단위: 작은 단위(함수/클래스) 격리 테스트. 통합: 여러 컴포넌트의 상호작용 검증.",
+      "followups": [
+        "테스트 더블(Mock/Stub/Spy/Fake)의 차이는?",
+        "테스트 피라미드란?",
+        "E2E 테스트가 적은 게 좋은 이유는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/software-engineering.md"
+    },
+    {
+      "id": "software-engineering-c1dca398",
+      "category": "software-engineering",
+      "category_label": "SW 공학",
+      "question": "다음 코드 3개에서 동기/비동기 선택이 적절한지 판단하고, 그 이유를 설명하시오.",
+      "answer": "A-2(Promise.all 병렬) / B-2(동기, 필요 시 Worker) / C-2(비동기 readFile)",
+      "distractors": [
+        "A-1(직렬 await) / B-1(Promise 래핑) / C-1(readFileSync)",
+        "A-2 / B-1 (CPU 계산도 Promise로 감싸야 비동기) / C-2",
+        "A-1 (직렬도 충분) / B-2 / C-1 (Promise는 오버헤드)"
+      ],
+      "explanation": "_A 비동기(Promise.all) / B 동기(또는 Worker) / C 비동기. \"비동기가 빠르다\"가 아니라 **워크로드 특성**(I/O vs CPU, 의존성 유무)에 따라 선택._",
+      "followups": [],
+      "related": [],
+      "source": "99-interview-questions/by-category/software-engineering.md"
+    },
+    {
+      "id": "web-ed1b7c29",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "브라우저의 렌더링 과정을 설명하시오.",
+      "answer": "HTML 파싱 → DOM, CSS 파싱 → CSSOM, Render Tree, Layout, Paint, Composite 순서로 진행",
+      "distractors": [
+        "JS 실행 → CSS 적용 → HTML 파싱 → 화면 출력 순서로 진행",
+        "HTML과 CSS를 동시에 단일 트리로 파싱 후 한 번에 그린다 (DOM/CSSOM 구분 없음)",
+        "모든 자원을 다운로드 완료한 뒤에만 한 번에 페인트하며 점진적 렌더링은 없다"
+      ],
+      "explanation": "HTML 파싱 → DOM, CSS 파싱 → CSSOM, Render Tree, Layout, Paint, Composite.",
+      "followups": [
+        "script 태그의 async / defer는 파싱에 어떤 영향을 주나?",
+        "CSS는 왜 Render-blocking인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-e0c05d66",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "reflow와 repaint의 차이를 설명하시오.",
+      "answer": "Reflow는 레이아웃(위치·크기) 재계산으로 비용이 크고, Repaint는 픽셀만 다시 그리는 상대적으로 저렴한 작업",
+      "distractors": [
+        "Reflow와 Repaint는 동일한 작업이며 명칭만 다르다",
+        "Repaint가 레이아웃 재계산이고 Reflow가 색상 변경이다 (정반대)",
+        "둘 다 GPU에서 완전히 동일한 비용으로 처리된다"
+      ],
+      "explanation": "Reflow: 레이아웃 재계산(비싸다). Repaint: 픽셀 다시 그리기(상대적으로 저렴).",
+      "followups": [
+        "transform과 opacity가 GPU 가속을 받는 이유는?",
+        "무엇이 forced synchronous layout을 유발하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-6b426c8b",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "CORS(Cross-Origin Resource Sharing)란 무엇이며, 왜 발생하는가?",
+      "answer": "브라우저의 SOP(같은 출처 정책) 때문 — 다른 출처 자원 접근 시 서버가 허용 헤더를 응답해야 한다",
+      "distractors": [
+        "서버가 직접 차단하는 보안 정책으로, 브라우저는 관여하지 않는다",
+        "HTTPS 인증서가 다를 때만 발생하는 TLS 단계 문제",
+        "CDN이 응답을 캐싱하지 못해서 발생하는 캐시 정책 충돌"
+      ],
+      "explanation": "SOP(같은 출처 정책) 때문. 다른 출처 자원 접근 시 서버가 허용 헤더를 응답해야 함.",
+      "followups": [
+        "Simple Request와 Preflight Request의 차이는?",
+        "credentials: 'include' 사용 시 주의점은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-83f8aa0d",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "localStorage와 sessionStorage의 차이를 설명하시오.",
+      "answer": "localStorage는 영구 보관, sessionStorage는 탭 세션 종료 시 삭제 — 둘 다 도메인 단위, 5~10MB",
+      "distractors": [
+        "sessionStorage가 영구 보관이고 localStorage가 세션 동안만 유지된다 (정반대)",
+        "둘 다 매 요청마다 서버로 자동 전송된다 (쿠키와 혼동)",
+        "localStorage는 1MB, sessionStorage는 100MB로 용량 차이가 핵심이다"
+      ],
+      "explanation": "localStorage: 영구. sessionStorage: 탭 세션 종료 시 삭제. 둘 다 도메인 단위, 5~10MB.",
+      "followups": [
+        "쿠키와 비교했을 때의 장단점은?",
+        "보안 토큰을 여기에 저장해도 되는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-64429539",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "CSS 속성 dvh, svh, lvh에 대해 설명하시오.",
+      "answer": "Dynamic / Small / Large viewport height — 모바일 브라우저 UI 표시 상태에 따라 변하는 100vh 문제를 해결",
+      "distractors": [
+        "디바이스 픽셀비(DPR)에 따라 정해지는 새로운 단위로 vh와 무관하다",
+        "다크 모드 / 라이트 모드별 뷰포트를 구분하는 미디어 쿼리 속성",
+        "가로/세로 모드 전환을 자동 감지하는 자바스크립트 API"
+      ],
+      "explanation": "Dynamic / Small / Large viewport height. 모바일 브라우저 UI 표시 상태에 따라 변하는 100vh 문제를 해결.",
+      "followups": [
+        "100vh 사용 시 모바일에서 발생하는 문제는?",
+        "dvh가 성능에 영향을 줄 수 있는가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-a77d3d3c",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "브라우저 메모리 캐시와 디스크 캐시의 차이는?",
+      "answer": "메모리 캐시는 세션 동안만 유지되며 빠르고, 디스크 캐시는 영구 보관되며 상대적으로 느림 — 브라우저가 자동 선택",
+      "distractors": [
+        "둘 다 동일한 저장소이며 명칭만 다르다",
+        "디스크 캐시가 메모리 캐시보다 항상 빠르다",
+        "메모리 캐시는 영구이고 디스크 캐시는 세션 단위이다 (정반대)"
+      ],
+      "explanation": "메모리: 세션 동안만, 빠름. 디스크: 영구, 상대적으로 느림. 브라우저가 자동 선택.",
+      "followups": [
+        "Service Worker 캐시는 어디에 속하나?",
+        "bfcache는 무엇인가?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-9a577dd8",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "Cache-Control 헤더에 대해 설명하시오.",
+      "answer": "캐시 동작을 제어하는 지시문 모음 — max-age, s-maxage, no-cache, no-store, public/private, must-revalidate 등",
+      "distractors": [
+        "쿠키 만료 시간을 지정하는 헤더로 캐시와는 무관하다",
+        "CORS의 허용 출처를 지정하는 헤더이다",
+        "브라우저 콘솔 로그 레벨을 제어하는 디버그 옵션이다"
+      ],
+      "explanation": "캐시 동작 제어 지시문. max-age, s-maxage, no-cache, no-store, public/private, must-revalidate.",
+      "followups": [
+        "no-cache와 no-store의 차이는?",
+        "ETag / Last-Modified는 어떻게 동작하나?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-a058c38a",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "브라우저가 폰트를 적용하는 과정을 설명하시오.",
+      "answer": "@font-face 발견 → 실제 사용 텍스트를 만나면 폰트 요청 → 다운로드 → 적용 (font-display로 FOUT/FOIT 제어)",
+      "distractors": [
+        "페이지 진입 즉시 모든 @font-face 폰트를 비동기 다운로드하여 사용 여부와 무관하게 적용",
+        "CSS 파일이 파싱되는 순간 동기적으로 다운로드되며 사용처 분석은 하지 않는다",
+        "폰트 파일은 브라우저에 내장돼 있어 다운로드 단계가 존재하지 않는다"
+      ],
+      "explanation": "@font-face 발견 → 실제 사용 텍스트 만나면 폰트 요청 → 다운로드 → 폰트 적용. font-display로 FOUT/FOIT 제어.",
+      "followups": [
+        "FOUT와 FOIT의 차이는?",
+        "font-display: swap / optional / fallback의 차이는?",
+        "preload로 폰트를 미리 받는 효과는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-38693cb7",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "Core Web Vitals란 무엇인가?",
+      "answer": "LCP(로딩), INP(상호작용, 구 FID), CLS(시각 안정성) — Google이 정의한 사용자 경험 핵심 지표",
+      "distractors": [
+        "FCP, TTFB, DOMContentLoaded 세 가지만 포함된 로딩 지표",
+        "모든 페이지뷰 수와 체류시간을 집계하는 마케팅 분석 KPI",
+        "Lighthouse 점수의 디스플레이 메트릭 표기명일 뿐 별도 지표는 아니다"
+      ],
+      "explanation": "LCP(로딩), INP(상호작용, 구 FID), CLS(시각 안정성). Google이 정한 사용자 경험 핵심 지표.",
+      "followups": [
+        "각 지표의 Good 기준값은?",
+        "Lab data와 Field data의 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-023095ca",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "웹 접근성의 개념과 개선 방법을 설명하시오.",
+      "answer": "모든 사용자가 동등하게 정보·기능을 이용 — 시맨틱 HTML, ARIA, 키보드 탐색, 색 대비, 스크린 리더 호환",
+      "distractors": [
+        "시각 디자인의 트렌드를 따라가기 위한 스타일 가이드라인",
+        "검색 엔진 크롤러가 잘 인식하도록 메타 태그를 추가하는 SEO 기법",
+        "페이지 로딩 속도를 빠르게 만들기 위한 성능 최적화 기법"
+      ],
+      "explanation": "모든 사용자가 동등하게 정보·기능을 이용. 시맨틱 HTML, ARIA, 키보드 탐색, 색 대비, 스크린 리더 호환.",
+      "followups": [
+        "WCAG의 4가지 원칙(POUR)은?",
+        "aria-label과 alt의 사용 차이는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-cedb9f99",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "웹표준이 무엇인가?",
+      "answer": "W3C/WHATWG가 정한 웹 기술 명세 — 호환성·접근성·상호운용성을 확보하기 위한 약속",
+      "distractors": [
+        "특정 브라우저 벤더가 단독으로 정의하는 비공개 사양",
+        "검색엔진 노출을 위한 마케팅 가이드라인",
+        "HTTPS 인증서 발급에 필요한 보안 표준의 별칭"
+      ],
+      "explanation": "W3C/WHATWG가 정한 웹 기술 명세. 호환성·접근성·상호운용성 확보.",
+      "followups": [
+        "표준화 과정(WD → CR → REC)은 어떻게 진행되나?",
+        "WHATWG와 W3C의 관계는?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
+    },
+    {
+      "id": "web-ca2c6d9f",
+      "category": "web",
+      "category_label": "웹 / 브라우저",
+      "question": "웹 애플리케이션의 성능을 최적화할 수 있는 방법은?",
+      "answer": "리소스 최소화·압축, 캐싱, CDN, 이미지 포맷·lazy loading, 코드 스플리팅, 렌더링 최적화의 조합",
+      "distractors": [
+        "모든 자원을 단일 거대 번들로 묶어 한 번에 전송하는 것이 가장 빠르다",
+        "사용자 디바이스 사양 업그레이드 외에는 클라이언트 측에서 할 수 있는 것이 없다",
+        "캐시는 일관성 문제 때문에 절대 사용하지 말아야 한다"
+      ],
+      "explanation": "리소스 최소화·압축, 캐싱, CDN, 이미지 포맷·lazy loading, 코드 스플리팅, 렌더링 최적화.",
+      "followups": [
+        "LCP를 개선하는 구체적 방법은?",
+        "폰트 로딩이 성능에 미치는 영향은?"
+      ],
+      "related": [],
+      "source": "99-interview-questions/by-category/web.md"
     }
   ]
 }
